@@ -1,0 +1,54 @@
+.button {
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  font-size: 14px;
+  line-height: 1.2;
+  padding: 12px 35px;
+  font-weight: 400;
+  background-color: transparent;
+  font-family: 'Gilroy', sans-serif;
+  box-sizing: border-box;
+  &_main {
+    color: $white;
+    background-color: $main;
+  }
+  &_bordered {
+    padding: 12px 35px;
+    color: $main;
+    border: 1px solid $main;
+    background-color: $white;
+  }
+  &_menu {
+    &::before {
+      content: '';
+      display: inline-block;
+      box-shadow: 0px -12px 0 0 $white, 0px -5px 0 0 $white, 0px 2px 0 0 $white;
+      margin-right: 10px;
+      width: 20px;
+      height: 2px;
+    }
+  }
+  &_catalog {
+    font-weight: 300;
+    background-color: transparent;
+    padding: 12px 30px;
+    &::after {
+      content: '';
+      display: inline-block;
+      background-image: url("data:image/svg+xml;utf8,<svg width='8' height='9' viewBox='0 0 8 9' xmlns='http://www.w3.org/2000/svg'><path d='M4.35355 8.85355C4.15829 9.04882 3.84171 9.04882 3.64645 8.85355L0.464466 5.67157C0.269204 5.47631 0.269204 5.15973 0.464466 4.96447C0.659728 4.7692 0.976311 4.7692 1.17157 4.96447L4 7.79289L6.82843 4.96447C7.02369 4.7692 7.34027 4.7692 7.53553 4.96447C7.7308 5.15973 7.7308 5.47631 7.53553 5.67157L4.35355 8.85355ZM4.5 0.5V8.5H3.5L3.5 0.5L4.5 0.5Z' /></svg>");
+      background-position: center center;
+      background-repeat: no-repeat;
+      margin-left: 12px;
+      width: 8px;
+      height: 9px;
+    }
+  }
+  &_phone {
+    background-image: url("data:image/svg+xml;utf8,<svg width='8' height='9' viewBox='0 0 8 9' xmlns='http://www.w3.org/2000/svg'><path d='M4.35355 8.85355C4.15829 9.04882 3.84171 9.04882 3.64645 8.85355L0.464466 5.67157C0.269204 5.47631 0.269204 5.15973 0.464466 4.96447C0.659728 4.7692 0.976311 4.7692 1.17157 4.96447L4 7.79289L6.82843 4.96447C7.02369 4.7692 7.34027 4.7692 7.53553 4.96447C7.7308 5.15973 7.7308 5.47631 7.53553 5.67157L4.35355 8.85355ZM4.5 0.5V8.5H3.5L3.5 0.5L4.5 0.5Z' /></svg>");
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+  &_search {
+  }
+}
