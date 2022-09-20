@@ -389,3 +389,30 @@ body {
     line-height: 1.5rem;
   }
 }
+
+.partners {
+  &__title {
+    text-align: center;
+    text-transform: uppercase;
+    @include title;
+    line-height: 1.875rem;
+    letter-spacing: 0.65rem;
+    padding-bottom: 50px;
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 30px;
+    list-style: none;
+    margin-bottom: 50px;
+  }
+  &__item {
+    height: 65px;
+  }
+  &__image {
+  }
+  &__pagination {
+    text-align: center;
+    justify-content: center;
+  }
+}
