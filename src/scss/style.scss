@@ -2,6 +2,7 @@
 @import './globals.scss';
 @import './typography';
 @import './buttons.scss';
+@import './mixins.scss';
 
 body {
   margin: 0;
@@ -137,10 +138,7 @@ body {
   }
   &__subtitle {
     color: $text-color-big;
-    font-family: 'PF DinText Pro', sans-serif;
-    font-weight: 400;
-    font-size: 1.5rem;
-    line-height: 1.3;
+    @include title;
     padding-top: 40px;
     padding-bottom: 20px;
   }
@@ -189,10 +187,8 @@ body {
 
 .features {
   &__title {
-    font-family: 'PF DinText Pro';
-    font-weight: 400;
-    font-size: 1.25rem;
-    letter-spacing: 0.5em;
+    @include title;
+    letter-spacing: 0.7rem;
     line-height: 150%;
     text-transform: uppercase;
     padding-bottom: 50px;
@@ -217,11 +213,8 @@ body {
     padding-bottom: 10px;
   }
   &__text {
+    @include title;
     color: $main;
-    font-family: 'PF DinText Pro', sans-serif;
-    font-weight: 400;
-    font-size: 1.25rem;
-    line-height: 130%;
   }
 }
 
@@ -238,10 +231,7 @@ body {
   }
   &__title {
     width: 25%;
-    color: $text-color-big;
-    font-family: 'PF DinText Pro', sans-serif;
-    font-weight: 400;
-    font-size: 1.25rem;
+    @include title;
     line-height: 150%;
     letter-spacing: 0.5em;
     text-transform: uppercase;
@@ -269,17 +259,15 @@ body {
 .popular {
   &__title {
     text-align: left;
-    font-family: 'PF DinText Pro', sans-serif;
-    font-weight: 400;
-    font-size: 1.25rem;
+    @include title;
     line-height: 150%;
     letter-spacing: 0.5em;
     text-transform: uppercase;
-    color: $text-color-big;
     padding-bottom: 50px;
   }
   &__pagination {
     justify-content: center;
+    padding-top: 50px;
   }
 }
 
@@ -292,10 +280,7 @@ body {
   }
   &__tab {
     cursor: pointer;
-    font-family: 'PF DinText Pro', sans-serif;
-    font-weight: 400;
-    font-size: 1.25rem;
-    line-height: 130%;
+    @include title;
     margin-right: 50px;
     padding-bottom: 10px;
     color: $disable;
@@ -329,11 +314,7 @@ body {
   }
   &__title {
     text-align: left;
-    font-family: 'PF DinText Pro', sans-serif;
-    font-weight: 400;
-    font-size: 1.25rem;
-    line-height: 130%;
-    color: $text-color-big;
+    @include title;
     padding-bottom: 10px;
   }
   &__info {
@@ -351,5 +332,60 @@ body {
   &__feature-value {
     color: $text-color-big;
     text-transform: lowercase;
+  }
+}
+
+.advantages {
+  &__wrapper {
+    background-color: $text-color-big;
+    background-image: url('../img/advantages-bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  &__title {
+    text-align: center;
+    text-transform: uppercase;
+    @include title;
+    line-height: 1.875rem;
+    letter-spacing: 0.65rem;
+    color: $white;
+    padding: 100px 0 50px 0;
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 30px;
+    row-gap: 50px;
+    margin-bottom: 50px;
+  }
+  &__item {
+    // width: 50%;
+  }
+  &__slogan {
+    font-family: 'Code Pro LC';
+    font-size: 2.625rem;
+    font-weight: 400;
+    line-height: 59px;
+    text-align: center;
+    padding-bottom: 50px;
+    color: $white;
+  }
+}
+
+.article {
+  &__title {
+    @include title;
+    line-height: 1.625rem;
+    color: $white;
+    padding-bottom: 20px;
+    text-align: left;
+  }
+  &__list {
+    margin-left: 23px;
+  }
+  &__item {
+    color: $gray;
+    text-align: left;
+    line-height: 1.5rem;
   }
 }
