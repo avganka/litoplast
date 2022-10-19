@@ -336,8 +336,7 @@ body {
 }
 
 .advantages {
-  &__wrapper {
-    background-color: $text-color-big;
+  .container {
     background-image: url('../img/advantages-bg.jpg');
     background-position: center;
     background-repeat: no-repeat;
