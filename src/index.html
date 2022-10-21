@@ -355,36 +355,172 @@
 
     <section class="feedback">
       <div class="container">
-        <h2 class="feedback__title">Форма обратной связи</h2>
-        <p class="feedback__action-text">Сделайте запрос через нашу форму<br> и получите <span>скидку в 5%</span> на
-          любую
-          продукцию в первом заказе</p>
-
-        <div class="feedback__form form">
-          <input type="text" name="name" placeholder="Ваше имя">
-          <input type="email" name="email" placeholder="Ваш email">
-          <input type="phone" name="phone" placeholder="Ваш телефон">
-          <input type="text" name="theme" placeholder="Тема сообщения">
-          <input type="text" name="message" placeholder="Сообщение">
-          <p class="form__text">Выберите направление запроса:</p>
-          <div class="form__radios">
-            <input type="radio" name="request-type" id="request-type1">
-            <label for="request-type1">Медицинские изделия</label>
-
-            <input type="radio" name="request-type" id="request-type2">
-            <label for="request-type2">Нагревательные системы</label>
-
-            <input type="radio" name="request-type" id="request-type3">
-            <label for="request-type3">Электроника</label>
-
-            <input type="radio" name="request-type" id="request-type4">
-            <label for="request-type4">Изделия из пластмасс</label>
+        <div class="feedback__wrapper">
+          <div class="feedback__form-wrapper">
+            <h2 class="feedback__title">Форма обратной связи</h2>
+            <p class="feedback__action-text">Сделайте запрос через нашу форму<br> и получите <span>скидку в 5%</span> на
+              любую
+              продукцию в первом заказе</p>
+            <form class="feedback__form form">
+              <div class="form__top-contacts">
+                <input type="text" name="name" placeholder="Ваше имя">
+                <input type="email" name="email" placeholder="Ваш e-mail">
+                <input type="phone" name="phone" placeholder="Ваш телефон">
+                <input type="text" name="theme" placeholder="Тема сообщения">
+                <input type="text" name="message" placeholder="Сообщение">
+              </div>
+              <div class="form__bottom-contacts">
+                <p class="form__text">Выберите направление запроса:</p>
+                <div class="form__radios">
+                  <input type="radio" name="request-type" id="request-type1">
+                  <label for="request-type1">Медицинские изделия</label>
+                  <input type="radio" name="request-type" id="request-type2">
+                  <label for="request-type2">Нагревательные системы</label>
+                  <input type="radio" name="request-type" id="request-type3">
+                  <label for="request-type3">Электроника</label>
+                  <input type="radio" name="request-type" id="request-type4">
+                  <label for="request-type4">Изделия из пластмасс</label>
+                </div>
+              </div>
+              <button class="form__button button button_main" type="submit">Отправить запрос</button>
+            </form>
           </div>
-          <button class="form__button" type="submit">Отправить запрос</button>
+          <div class="feedback__image">
+            <img src="./img/litoplast.jpg" alt="">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contacts">
+      <div class="container">
+        <div class="contacts__wrapper">
+          <div class="contacts__info">
+            <h2 class="contacts__title">Как связаться</h2>
+            <div class="contacts__text">
+              <p>ПК ООО «Литопласт» УНП 600048089</p>
+              <p>Юридический адрес: 223034, РБ. Минская область, Минский р-н, г. Заславль, ул. Путейко, 31-4, тел: +375
+                17 517-83-48.</p>
+              <p>Офис: 220037, РБ, г. Минск, пер. Козлова, 7г</p>
+            </div>
+            <div class="contacts__map">
+              <img src="./img/map.jpg" alt="">
+            </div>
+          </div>
+          <div class="contacts__shops-list">
+            <div class="contacts__shop-item shop">
+              <img class="shop__icon" src="./img/icons/med.svg" alt="Медицинские изделия">
+              <h3 class="shop__title">Медицинские изделия из пластмасс: отдел продаж</h3>
+              <a class="shop__email" href="#">med@litoplast.by</a>
+              <a class="shop__phone" href="#">+375 44 599-50-60</a>
+              <div class="shop__social-list">
+                <a class="shop__social-item shop__social-item--telegram"></a>
+                <a class="shop__social-item shop__social-item--viber"></a>
+                <a class="shop__social-item shop__social-item--whatsapp"></a>
+              </div>
+            </div>
+            <div class="contacts__shop-item shop">
+              <img class="shop__icon" src="./img/icons/plastic.svg" alt="Медицинские изделия">
+              <h3 class="shop__title">Изделия из пластмасс: отдел продаж</h3>
+              <a class="shop__email" href="#">plast@litoplast.by</a>
+              <a class="shop__phone" href="#">+375 29 377-80-23</a>
+              <div class="shop__social-list">
+                <a class="shop__social-item shop__social-item--telegram"></a>
+                <a class="shop__social-item shop__social-item--viber"></a>
+                <a class="shop__social-item shop__social-item--whatsapp"></a>
+              </div>
+            </div>
+            <div class="contacts__shop-item shop">
+              <img class="shop__icon" src="./img/icons/heat.svg" alt="Медицинские изделия">
+              <h3 class="shop__title">Нагревательные системы и электронные компоненты: отдел продаж</h3>
+              <a class="shop__email" href="#">wirt@litoplast.by</a>
+              <a class="shop__phone" href="#">+375 29 617-07-75</a>
+              <div class="shop__social-list">
+                <a class="shop__social-item shop__social-item--telegram"></a>
+                <a class="shop__social-item shop__social-item--viber"></a>
+                <a class="shop__social-item shop__social-item--whatsapp"></a>
+              </div>
+            </div>
+            <div class="contacts__shop-item shop">
+              <img class="shop__icon" src="./img/icons/services.svg" alt="Медицинские изделия">
+              <h3 class="shop__title">Производство: заказ услуг</h3>
+              <a class="shop__email" href="#">zsl_024@litoplast.by</a>
+              <a class="shop__phone" href="#">+375 29 694-44-28</a>
+              <div class="shop__social-list">
+                <a class="shop__social-item shop__social-item--telegram"></a>
+                <a class="shop__social-item shop__social-item--viber"></a>
+                <a class="shop__social-item shop__social-item--whatsapp"></a>
+              </div>
+            </div>
+            <div class="contacts__shop-item shop">
+              <img class="shop__icon" src="./img/icons/marketing.svg" alt="Медицинские изделия">
+              <h3 class="shop__title">Отдел маркетинга</h3>
+              <a class="shop__email" href="#">marketing@litoplast.by</a>
+              <a class="shop__phone" href="#">+375 17 399-50-04</a>
+              <div class="shop__social-list">
+                <a class="shop__social-item shop__social-item--telegram"></a>
+                <a class="shop__social-item shop__social-item--viber"></a>
+                <a class="shop__social-item shop__social-item--whatsapp"></a>
+              </div>
+            </div>
+          </div>
 
         </div>
       </div>
     </section>
+
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__top">
+          <img src="./img/logo.svg" class="footer__logo"" alt=" Литопласт">
+        </div>
+        <div class="footer__main">
+          <div class="footer__menu">
+            <h3 class="footer__menu-title">Каталог продукции</h3>
+            <ul class="footer__menu-list">
+              <li class="footer__menu-item">Изделия медицинского назначения</li>
+              <li class="footer__menu-item">Изделия из пластмасс</li>
+              <li class="footer__menu-item">Нагревательные системы</li>
+              <li class="footer__menu-item">Электронные компоненты</li>
+              <li class="footer__menu-item">Пресс-формы для литья</li>
+            </ul>
+          </div>
+          <div class="footer__menu">
+            <h3 class="footer__menu-title">Услуги</h3>
+            <ul class="footer__menu-list">
+              <li class="footer__menu-item">Нагревательный кабель на заказ</li>
+              <li class="footer__menu-item">Литье изделий из пластмасс</li>
+              <li class="footer__menu-item">Брендирование продукции из пластмасс</li>
+              <li class="footer__menu-item">Контрактное производство электроники</li>
+            </ul>
+          </div>
+          <div class="footer__menu">
+            <h3 class="footer__menu-title">О компании</h3>
+            <ul class="footer__menu-list">
+              <li class="footer__menu-item">О компании</li>
+              <li class="footer__menu-item">Пресс-блог</li>
+              <li class="footer__menu-item">Как купить</li>
+              <li class="footer__menu-item">Политика конфиденциальности</li>
+              <li class="footer__menu-item">Обработка персональных данных</li>
+            </ul>
+          </div>
+          <div class="footer__menu">
+            <h3 class="footer__menu-title">Социальные сети</h3>
+            <div class="footer__menu-social-list">
+              <a href="#" class="footer__menu-social-item footer__menu-social-item--youtube"></a>
+              <a href="#" class="footer__menu-social-item footer__menu-social-item--facebook"></a>
+              <a href="#" class="footer__menu-social-item footer__menu-social-item--instagram"></a>
+            </div>
+          </div>
+          <div class="footer__menu">
+            <h3 class="footer__menu-title">Обратная связь</h3>
+            <button class="footer__button button button_main">Отправить запрос</button>
+          </div>
+        </div>
+        <div class="footer__copyright">© 1992-2022, «ЛИТОПЛАСТ»</div>
+      </div>
+    </footer>
   </main>
 </body>
 

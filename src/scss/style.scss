@@ -4,6 +4,10 @@
 @import './buttons.scss';
 @import './mixins.scss';
 
+html {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-size: 16px;
@@ -413,10 +417,18 @@ body {
   &__pagination {
     text-align: center;
     justify-content: center;
+    flex-wrap: nowrap;
   }
 }
 
 .feedback {
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 410px;
+    column-gap: 30px;
+  }
+  &__form-wrapper {
+  }
   &__title {
     text-align: left;
     text-transform: uppercase;
@@ -434,53 +446,252 @@ body {
     text-align: left;
     margin-bottom: 40px;
     span {
+      color: $main;
     }
   }
   &__form {
     width: 740px;
   }
+  &__image {
+    height: 657px;
+    background-image: url('../img/litoplast.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 }
 
 .form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-
+  &__top-contacts {
+    display: grid;
+    gap: 40px;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 40px;
+  }
+  &__bottom-contacts {
+    margin-bottom: 40px;
+  }
+  &__text {
+    text-align: left;
+    margin-bottom: 15px;
+    font-family: 'PF DinText Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 130%;
+  }
+  &__radios {
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+  }
   input {
     font-family: 'Gilroy';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 150%;
     padding: 0;
-    padding-bottom: 10px;
+    padding-bottom: 9px;
     border: none;
-    border-bottom: 1px solid $gray;
+    border-bottom: 1px solid $disable;
     outline: none;
+  }
+  input[type='radio'] {
+    margin: 0;
+    color: $disable;
+    transform: scale(1.6);
+  }
+  input[type='radio']:not(:first-child) {
+    margin-left: 23px;
+  }
+  input[type='radio'] ~ label {
+    padding-left: 15px;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.875rem;
+    font-feature-settings: 'kern' off;
+    color: $text-color-small;
   }
 
   input[name='message'] {
     grid-column: 1/3;
   }
-  &__text {
-    grid-column: 1/3;
+}
+
+.contacts {
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 520px 630px;
+    column-gap: 140px;
+  }
+  &__title {
+    text-align: left;
+    text-transform: uppercase;
+    @include title;
+    line-height: 150%;
+    letter-spacing: 0.65rem;
+    padding-bottom: 50px;
+  }
+  &__info {
     text-align: left;
   }
-  &__radios {
-    grid-column: 1/3;
-    display: flex;
-    align-items: center;
-    input {
-      margin: 0;
-      margin-right: 10px;
+  &__text {
+    margin-bottom: 30px;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 150%;
+    color: $text-color-small;
+    p {
+      padding-bottom: 7px;
     }
-    label:not(:last-child) {
-      padding-right: 22px;
-      text-align: left;
-      font-size: 0.875rem;
+  }
+  &__map {
+  }
+  &__shops-list {
+    display: flex;
+    flex-direction: column;
+  }
+  &__shop-item:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
+
+.shop {
+  padding-left: 60px;
+  text-align: left;
+  position: relative;
+  &__title {
+    font-family: 'PF DinText Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.25rem;
+    line-height: 130%;
+    padding-top: 4px;
+    padding-bottom: 17px;
+  }
+  &__icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  &__email,
+  &__phone {
+    display: block;
+    padding-bottom: 5px;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 150%;
+    color: $blue;
+    text-decoration: none;
+  }
+
+  &__social-list {
+    display: flex;
+    gap: 10px;
+  }
+  &__social-item {
+    width: 30px;
+    height: 30px;
+  }
+  &__social-item--telegram {
+    background-image: url('../img/icons/telegram.svg');
+  }
+  &__social-item--viber {
+    background-image: url('../img/icons/viber.svg');
+  }
+  &__social-item--whatsapp {
+    background-image: url('../img/icons/whatsapp.svg');
+  }
+}
+
+.footer {
+  background-color: $footer-bg;
+  &__top {
+    margin-bottom: 50px;
+  }
+  &__logo {
+    display: block;
+    margin: 0 auto;
+  }
+  &__main {
+    display: grid;
+    column-gap: 30px;
+    row-gap: 70px;
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 50px;
+  }
+  &__menu {
+    text-align: left;
+  }
+  &__menu:nth-child(-n + 3) {
+    grid-row: 1/3;
+  }
+  &__menu-title {
+    font-family: 'PF DinText Pro';
+    font-weight: 400;
+    font-size: 1.25rem;
+    color: $blue;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $blue;
+    line-height: 150%;
+    padding-left: 20px;
+    margin-bottom: 20px;
+    // letter-spacing: 0.075rem;
+  }
+  &__menu-list {
+    list-style: none;
+  }
+  &__menu-item {
+    padding-left: 20px;
+    font-family: 'Gilroy';
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 150%;
+  }
+  &__menu-item:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  &__menu-social-list {
+    display: flex;
+    gap: 20px;
+    padding-left: 20px;
+  }
+  &__menu-social-item {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    &--youtube {
+      background-image: url('../img/icons/youtube.svg');
+    }
+    &--facebook {
+      background-image: url('../img/icons/facebook.svg');
+    }
+    &--instagram {
+      background-image: url('../img/icons/instagram.svg');
     }
   }
   &__button {
-    grid-column: 1/3;
+    display: block;
+    margin-left: 20px;
+  }
+  &__copyright {
+    border-top: 1px solid $light-blue;
+    padding-top: 20px;
+    color: $disable;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 150%;
+    text-transform: uppercase;
   }
 }
