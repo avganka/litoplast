@@ -1,11 +1,19 @@
 //Colors
 $main: #126fb4;
-$text-color-big: #262e34;
-$text-color-small: #525558;
-$disable: #999999;
 $light-main: #d8e1ef;
-$white: #ffffff;
-$gray: #eeeeee;
-$blue: #126fb4;
-$light-blue: #d8e1ef;
+
+$text: #525558;
+$title-text: #262e34;
+$btn-text: #ffffff;
+
+$grey: #eeeeee;
+$dark-grey: #999999;
+
+$main-bg: #ffffff;
 $footer-bg: #f6faff;
+$light-blue: #d8e1ef;
+
+:root {
+  --page-width: 1440px;
+  --page-paddings: 75px;
+}

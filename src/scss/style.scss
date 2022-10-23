@@ -4,355 +4,357 @@
 @import './buttons.scss';
 @import './mixins.scss';
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 html {
+  font-size: 16px;
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-size: 16px;
   line-height: 1.5;
-  background-color: $white;
   font-family: 'Gilroy', sans-serif;
   font-weight: 300;
-  color: $text-color-small;
+  color: $text;
+  background-color: $main-bg;
 }
 
 .container {
-  max-width: 1440px;
-  padding: 50px 75px;
+  max-width: var(--page-width);
+  padding: 50px var(--page-paddings);
   margin: 0 auto;
   text-align: center;
   box-sizing: border-box;
 }
 
+.main-title {
+  font-family: 'Code Pro LC', sans-serif;
+  font-size: 4.5rem;
+  font-weight: 400;
+  line-height: 5.375rem;
+  color: $main;
+  text-transform: uppercase;
+}
+
+.section-title {
+  font-family: 'PF DinText Pro', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.625rem;
+  color: $title-text;
+  letter-spacing: 0.575rem;
+  text-transform: uppercase;
+}
+
+.big-text {
+  font-family: 'Code Pro LC', sans-serif;
+  font-size: 2.625rem;
+  font-weight: 400;
+  line-height: 3.675rem;
+  color: $title-text;
+  text-transform: uppercase;
+  span {
+    color: $main;
+  }
+}
+
 .header {
-  box-sizing: border-box;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1440px;
-  height: 100px;
-  padding: 0 75px;
-  margin: 0 auto;
-  position: relative;
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 430px);
+    // display: flex;
+    // flex-wrap: wrap;
 
-  &__menu-btns {
-    display: flex;
-    align-items: center;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    position: relative;
   }
-  &__menu-btn {
-    width: 139px;
-    height: 41px;
-  }
-
   &__logo {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 70px;
-    height: 56px;
+    display: block;
+    margin: 0 auto;
   }
-  &__contancts {
+  &__menu,
+  &__contacts {
     display: flex;
     align-items: center;
-    column-gap: 30px;
   }
-  &__icon {
-    cursor: pointer;
+  &__contacts {
+    justify-content: flex-end;
+    gap: 30px;
   }
-  &__feedback-btn {
-    width: 178px;
-    height: 41px;
-  }
-
-  &__language-btn {
-    background-color: transparent;
+  &__lang-button {
     padding: 0;
-    border: none;
-    font-family: 'Gilroy';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 1rem;
-    line-height: 1.2;
-    color: $text-color-big;
+    color: $title-text;
   }
-  & .active {
+  &__lang-button .active {
     box-shadow: 0 1px 0 $main;
     color: $main;
   }
 }
 
 .icon {
+  cursor: pointer;
   fill: $main;
 }
 
 .slider {
-  box-sizing: border-box;
-  flex-wrap: nowrap;
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 600px;
-  max-width: 1440px;
-  padding: 50px 75px;
-  margin: 0 auto;
-  &__image {
-    width: 410px;
-    height: 500px;
+  &__wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    position: relative;
+    text-align: left;
+    overflow: hidden;
+  }
+  &__current-image {
     margin-left: 26px;
     margin-right: 250px;
   }
   &__next-image {
-    width: 330px;
+    transform: scale(0.8) translateX(-50px);
+    margin: auto 0;
   }
   &__info {
-    align-self: flex-start;
-    width: 410px;
-    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
   }
   &__title {
+    margin-top: 50px;
+  }
+  &__title span {
     color: $main;
-    text-transform: uppercase;
-    font-size: 72px;
-    font-family: 'Code Pro LC', sans-serif;
+  }
+
+  &__subtitle {
+    font-family: 'PF DinText Pro', sans-serif;
+    font-size: 1.5rem;
     font-weight: 400;
-    line-height: 1;
-    padding-top: 50px;
-    padding-bottom: 15px;
-    span {
-      text-transform: none;
-      font-family: 'Gilroy', sans-serif;
-      font-weight: 400;
-      font-size: 1rem;
-      padding-top: 15px;
-      display: block;
-      color: $main;
-      margin: 0;
-    }
+    line-height: 1.3;
+    color: $title-text;
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+  &__description {
+    color: $text;
+  }
+  &__arrow {
+    margin-left: 10px;
   }
   &__pagination {
     position: absolute;
     right: 75px;
     bottom: 50px;
   }
-  &__subtitle {
-    color: $text-color-big;
-    @include title;
-    padding-top: 40px;
-    padding-bottom: 20px;
-  }
-  &__description {
-    color: $text-color-small;
-  }
   &__button {
-    display: block;
     margin-top: auto;
   }
 }
 
 .pagination {
-  list-style: none;
   display: flex;
   align-items: center;
+  list-style: none;
   gap: 30px;
   &__page {
+    cursor: pointer;
     font-size: 1.5rem;
     line-height: 1.3;
     font-weight: 400;
-    color: $text-color-big;
-    &.active {
-      color: $main;
-      box-shadow: inset 0 -3px 0 $main;
-      font-size: 2rem;
-    }
+    color: $title-text;
+  }
+  &__page.active {
+    color: $main;
+    box-shadow: inset 0 -3px 0 $main;
+    font-size: 2rem;
+  }
+  &--center {
+    justify-content: center;
   }
 }
 
 .mission {
   &__text {
     padding: 0 10%;
-    text-transform: uppercase;
-    font-family: 'Code Pro LC', sans-serif;
-    font-weight: 400;
-    font-size: 2.625rem;
-    line-height: 1.4;
-    color: $text-color-big;
-    text-align: center;
-    span {
-      color: $main;
-    }
   }
 }
 
 .features {
   &__title {
-    @include title;
-    letter-spacing: 0.7rem;
-    line-height: 150%;
-    text-transform: uppercase;
-    padding-bottom: 50px;
+    margin-bottom: 50px;
   }
   &__list {
     display: flex;
-    list-style: none;
     justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
-    column-gap: 30px;
+
+    list-style: none;
+    gap: 30px;
+    padding-top: 15px;
   }
   &__item {
-    box-sizing: border-box;
-    padding-top: 10px;
     text-align: center;
-    height: 106px;
-    flex-basis: calc(100% / 5);
+    width: 150px;
   }
   &__img {
     width: 50px;
     height: 50px;
-    padding-bottom: 10px;
+    margin-bottom: 10px;
   }
   &__text {
-    @include title;
     color: $main;
+    font-family: 'PF DinText Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.25rem;
+    line-height: 1.3;
   }
 }
 
 .production {
-  max-width: 1440px;
-  padding: 50px 0;
-  margin: 0 auto;
-  box-sizing: border-box;
   &__header {
-    padding: 0 75px;
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: left;
+    margin-bottom: 50px;
   }
-  &__title {
-    width: 25%;
-    @include title;
-    line-height: 150%;
-    letter-spacing: 0.5em;
-    text-transform: uppercase;
+  &__gallery-list {
+    margin: 0 calc(var(--page-paddings) * -1);
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
   }
-
-  &__text {
-    width: 50%;
-    font-family: 'Gilroy', sans-serif;
-    font-weight: 400;
-    line-height: 150%;
-  }
-
-  &__gallery {
-    display: flex;
-    flex-wrap: wrap;
+  &__gallery-item {
+    background: rgba(0, 0, 0, 0.5);
+    position: relative;
   }
   &__img {
-    flex-basis: calc(100% / 2);
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    transition: all 0.3s ease;
+    z-index: 1;
   }
-  &__img:nth-child(-n + 3) {
-    flex-basis: calc(100% / 3);
+  &__img:hover {
+    cursor: pointer;
+    opacity: 0;
   }
+  &__img:hover ~ &__text {
+    opacity: 1;
+  }
+  &__text {
+    color: $btn-text;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+  }
+}
+
+.span-2 {
+  grid-column: span 2;
+}
+.span-3 {
+  grid-column: span 3;
 }
 
 .popular {
   &__title {
     text-align: left;
-    @include title;
-    line-height: 150%;
-    letter-spacing: 0.5em;
-    text-transform: uppercase;
-    padding-bottom: 50px;
+    margin-bottom: 50px;
   }
-  &__pagination {
-    justify-content: center;
-    padding-top: 50px;
+  &__catalog {
+    margin-bottom: 50px;
   }
 }
 
 .catalog {
   &__tabs-list {
-    list-style: none;
     border-bottom: 1px solid $light-main;
     display: flex;
     margin-bottom: 30px;
   }
   &__tab {
     cursor: pointer;
-    @include title;
+    font-family: 'PF DinText Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.25rem;
+    line-height: 1.3;
     margin-right: 50px;
     padding-bottom: 10px;
-    color: $disable;
-    &.active {
-      color: $main;
-      box-shadow: 0 1px 0 $main;
-    }
+    color: $dark-grey;
+  }
+  &__tab.active {
+    color: $main;
+    box-shadow: 0 1px 0 $main;
   }
   &__cards-list {
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
     gap: 60px;
-    flex-wrap: wrap;
-  }
-  &__card {
-    width: 210px;
   }
 }
 
 .card {
-  height: 386px;
   &__image-wrapper {
-    max-width: 210px;
-    max-height: 210px;
-    padding-bottom: 20px;
+    height: 210px;
+    margin-bottom: 20px;
   }
   &__img {
+    display: block;
     width: 100%;
     height: 100%;
+    object-fit: cover;
   }
   &__title {
+    font-family: 'PF DinText Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.25rem;
+    line-height: 1.3;
     text-align: left;
-    @include title;
-    padding-bottom: 10px;
+    margin-bottom: 10px;
   }
   &__info {
     text-align: left;
   }
   &__feature-text,
   &__feature-value {
-    padding-bottom: 10px;
-    font-family: 'Gilroy', sans-serif;
-    font-weight: 400;
+    margin-bottom: 10px;
     font-size: 0.875rem;
-    line-height: 150%;
-    color: $disable;
+    color: $dark-grey;
   }
   &__feature-value {
-    color: $text-color-big;
-    text-transform: lowercase;
+    color: $title-text;
   }
 }
 
 .advantages {
-  .container {
+  &__wrapper {
     background-image: url('../img/advantages-bg.jpg');
     background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
   }
   &__title {
-    text-align: center;
-    text-transform: uppercase;
-    @include title;
-    line-height: 1.875rem;
-    letter-spacing: 0.65rem;
-    color: $white;
-    padding: 100px 0 50px 0;
+    color: $btn-text;
+    margin: 100px 0 50px 0;
   }
   &__list {
     display: grid;
@@ -361,50 +363,36 @@ body {
     row-gap: 50px;
     margin-bottom: 50px;
   }
-  &__item {
-    // width: 50%;
-  }
   &__slogan {
-    font-family: 'Code Pro LC';
-    font-size: 2.625rem;
-    font-weight: 400;
-    line-height: 59px;
-    text-align: center;
-    padding-bottom: 50px;
-    color: $white;
+    margin-bottom: 50px;
+    color: $btn-text;
   }
 }
 
 .article {
   &__title {
-    @include title;
-    line-height: 1.625rem;
-    color: $white;
-    padding-bottom: 20px;
+    line-height: 1.625;
+    color: $btn-text;
+    margin-bottom: 20px;
     text-align: left;
   }
   &__list {
     margin-left: 23px;
   }
   &__item {
-    color: $gray;
+    color: $grey;
     text-align: left;
-    line-height: 1.5rem;
+    line-height: 1.5;
   }
 }
 
 .partners {
   &__title {
-    text-align: center;
-    text-transform: uppercase;
-    @include title;
-    line-height: 1.875rem;
-    letter-spacing: 0.65rem;
-    padding-bottom: 50px;
+    margin-bottom: 50px;
   }
   &__list {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
     gap: 30px;
     list-style: none;
     margin-bottom: 50px;
@@ -412,56 +400,35 @@ body {
   &__item {
     height: 65px;
   }
-  &__image {
-  }
-  &__pagination {
-    text-align: center;
-    justify-content: center;
-    flex-wrap: nowrap;
+  &__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 
 .feedback {
   &__wrapper {
-    display: grid;
-    grid-template-columns: 1fr 410px;
-    column-gap: 30px;
-  }
-  &__form-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 30px;
   }
   &__title {
     text-align: left;
-    text-transform: uppercase;
-    @include title;
-    line-height: 1.875rem;
-    letter-spacing: 0.65rem;
-    padding-bottom: 50px;
+    margin-bottom: 50px;
   }
   &__action-text {
-    font-family: 'Code Pro LC', sans-serif;
-    font-size: 2.625rem;
-    font-weight: 400;
-    line-height: 3.6875rem;
-    // letter-spacing: 0em;
     text-align: left;
     margin-bottom: 40px;
-    span {
-      color: $main;
-    }
   }
-  &__form {
-    width: 740px;
-  }
-  &__image {
-    height: 657px;
-    background-image: url('../img/litoplast.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  &__img {
+    width: 410px;
   }
 }
 
 .form {
+  width: 740px;
   &__top-contacts {
     display: grid;
     gap: 40px;
@@ -478,7 +445,7 @@ body {
     font-style: normal;
     font-weight: 400;
     font-size: 1.125rem;
-    line-height: 130%;
+    line-height: 1.3;
   }
   &__radios {
     display: flex;
@@ -486,20 +453,25 @@ body {
     padding-left: 5px;
   }
   input {
+    color: $main;
     font-family: 'Gilroy';
     font-style: normal;
     font-weight: 400;
     font-size: 1rem;
-    line-height: 150%;
+    line-height: 1.5;
     padding: 0;
     padding-bottom: 9px;
     border: none;
-    border-bottom: 1px solid $disable;
+    border-bottom: 1px solid $dark-grey;
     outline: none;
   }
+  input:focus {
+    border-bottom: 1px solid $main;
+  }
+
   input[type='radio'] {
     margin: 0;
-    color: $disable;
+    color: $dark-grey;
     transform: scale(1.6);
   }
   input[type='radio']:not(:first-child) {
@@ -512,46 +484,35 @@ body {
     font-weight: 400;
     font-size: 0.875rem;
     font-feature-settings: 'kern' off;
-    color: $text-color-small;
+    color: $text;
   }
 
   input[name='message'] {
-    grid-column: 1/3;
+    grid-column: span 2;
   }
 }
 
 .contacts {
   &__wrapper {
     display: grid;
-    grid-template-columns: 520px 630px;
+    grid-template-columns: 520px 1fr;
     column-gap: 140px;
   }
   &__title {
     text-align: left;
-    text-transform: uppercase;
-    @include title;
-    line-height: 150%;
-    letter-spacing: 0.65rem;
-    padding-bottom: 50px;
+    margin-bottom: 50px;
   }
   &__info {
     text-align: left;
   }
   &__text {
     margin-bottom: 30px;
-    font-family: 'Gilroy';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1rem;
-    line-height: 150%;
-    color: $text-color-small;
+    color: $text;
     p {
       padding-bottom: 7px;
     }
   }
-  &__map {
-  }
-  &__shops-list {
+  &__shop-list {
     display: flex;
     flex-direction: column;
   }
@@ -561,51 +522,48 @@ body {
 }
 
 .shop {
-  padding-left: 60px;
   text-align: left;
-  position: relative;
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
   &__title {
     font-family: 'PF DinText Pro';
     font-style: normal;
     font-weight: 400;
     font-size: 1.25rem;
-    line-height: 130%;
-    padding-top: 4px;
-    padding-bottom: 17px;
+    line-height: 1.3;
   }
   &__icon {
-    position: absolute;
-    top: 0;
-    left: 0;
+    margin-right: 20px;
   }
   &__email,
   &__phone {
     display: block;
+    padding-left: 60px;
     padding-bottom: 5px;
-    font-family: 'Gilroy';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1rem;
-    line-height: 150%;
-    color: $blue;
+    color: $main;
     text-decoration: none;
   }
 
   &__social-list {
+    padding-left: 60px;
     display: flex;
     gap: 10px;
   }
-  &__social-item {
-    width: 30px;
-    height: 30px;
-  }
-  &__social-item--telegram {
+}
+
+.messenger-icon {
+  width: 30px;
+  height: 30px;
+  &--telegram {
     background-image: url('../img/icons/telegram.svg');
   }
-  &__social-item--viber {
+  &--viber {
     background-image: url('../img/icons/viber.svg');
   }
-  &__social-item--whatsapp {
+  &--whatsapp {
     background-image: url('../img/icons/whatsapp.svg');
   }
 }
@@ -630,19 +588,18 @@ body {
     text-align: left;
   }
   &__menu:nth-child(-n + 3) {
-    grid-row: 1/3;
+    grid-row: span 2;
   }
   &__menu-title {
     font-family: 'PF DinText Pro';
     font-weight: 400;
     font-size: 1.25rem;
-    color: $blue;
+    color: $main;
     padding-bottom: 10px;
-    border-bottom: 1px solid $blue;
-    line-height: 150%;
+    border-bottom: 1px solid $main;
+    line-height: 1.5;
     padding-left: 20px;
     margin-bottom: 20px;
-    // letter-spacing: 0.075rem;
   }
   &__menu-list {
     list-style: none;
@@ -652,7 +609,7 @@ body {
     font-family: 'Gilroy';
     font-weight: 400;
     font-size: 1rem;
-    line-height: 150%;
+    line-height: 1.5;
   }
   &__menu-item:not(:last-child) {
     margin-bottom: 20px;
@@ -686,12 +643,12 @@ body {
   &__copyright {
     border-top: 1px solid $light-blue;
     padding-top: 20px;
-    color: $disable;
+    color: $dark-grey;
     font-family: 'Gilroy';
     font-style: normal;
     font-weight: 400;
     font-size: 1rem;
-    line-height: 150%;
+    line-height: 1.5;
     text-transform: uppercase;
   }
 }
