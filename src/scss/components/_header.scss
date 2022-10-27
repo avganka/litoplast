@@ -1,0 +1,101 @@
+.header {
+  &__wrapper {
+    display: flex;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    position: relative;
+    @include mobile {
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+  }
+
+  &__menu {
+    flex-shrink: 1;
+    flex-basis: 45%;
+    @include tablet {
+      flex-basis: 35%;
+    }
+  }
+  &__logo-wrapper {
+    flex-shrink: 1;
+    flex-basis: 10%;
+  }
+
+  &__contacts {
+    flex-grow: 1;
+    flex-basis: 45%;
+  }
+  &__logo {
+    display: block;
+    margin: 0 auto;
+    @include mobile {
+      width: 50px;
+    }
+  }
+  &__menu,
+  &__contacts {
+    display: flex;
+    align-items: center;
+  }
+  &__menu-catalog {
+    @include tablet {
+      display: none;
+    }
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__menu,
+  &__contacts,
+  &__logo-wrapper {
+    flex-basis: calc(100% / 3);
+  }
+
+  &__contacts {
+    justify-content: flex-end;
+    gap: 30px;
+    @include mobile {
+      gap: 20px;
+    }
+  }
+  &__menu-catalog,
+  &__contacts-button {
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__icon {
+    cursor: pointer;
+    @include mobile {
+      width: 16px;
+      height: 16px;
+    }
+  }
+  &__icon--search {
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__icon {
+    @include mobile {
+      width: 16px;
+      grid-template: 16px;
+    }
+  }
+  &__lang-button {
+    flex-grow: 1;
+    text-decoration: none;
+    color: $dark;
+    @include mobile {
+      font-size: 12px;
+    }
+  }
+  &__lang-button.active {
+    box-shadow: 0 1px 0 $accent;
+    color: $accent;
+  }
+}

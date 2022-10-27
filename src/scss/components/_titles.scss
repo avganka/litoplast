@@ -1,0 +1,48 @@
+.main-title {
+  font-family: 'Code Pro LC', sans-serif;
+  font-size: 72px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: $accent;
+  text-transform: uppercase;
+  ~ span {
+    color: $accent;
+  }
+  @include mobile {
+    font-size: 36px;
+    line-height: 1.4;
+    ~ span {
+      font-size: 14px;
+    }
+  }
+}
+
+.section-title {
+  font-family: 'PF DinText Pro', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: $dark;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  @include mobile {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+
+.big-text {
+  font-family: 'Code Pro LC', sans-serif;
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: $dark;
+  text-transform: uppercase;
+  span {
+    color: $accent;
+  }
+  @include mobile {
+    font-size: 32px;
+    line-height: 44.8px;
+  }
+}
