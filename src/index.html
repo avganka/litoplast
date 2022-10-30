@@ -54,14 +54,15 @@
 
 
         </div>
-        <ul class="slider__pagination pagination">
-          <li class="pagination__page active">1</li>
-          <li class="pagination__page ">2</li>
-          <li class="pagination__page ">3</li>
-          <li class="pagination__page ">4</li>
-          <li class="pagination__page ">5</li>
-          <li class="pagination__page ">6</li>
-        </ul>
+
+        <div class="slider__pagination pagination">
+          <div class="pagination__page active">1</div>
+          <div class="pagination__page ">2</div>
+          <div class="pagination__page ">3</div>
+          <div class="pagination__page ">4</div>
+          <div class="pagination__page ">5</div>
+          <div class="pagination__page ">6</div>
+        </div>
       </div>
     </section>
 
@@ -100,7 +101,7 @@
         </ul>
       </div>
     </section>
-    <!-- 
+
     <section class="production">
       <div class="container production__wrapper">
         <div class="production__header">
@@ -143,7 +144,7 @@
             оборудования, высокий
             профессиональный уровень специалистов позволяют оказывать широкий перечень услуг:</p>
         </div>
-        <div class="production__gallery-list production__gallery-list--one-row">
+        <div class="production__gallery-list  production__gallery-list--one-row">
           <article class="production__gallery-item span-3 ">
             <img class="production__img" src="./img/photo-6.jpg" alt="Нагревательный кабель на заказ">
             <h3 class="production__name">Нагревательный кабель на заказ</h3>
@@ -177,16 +178,14 @@
     <section class="popular">
       <div class="container">
         <h2 class="popular__title section-title">Популярные товары</h2>
-        <div class="popular__catalog catalog">
-          <div class="catalog__tabs-list">
-            <div class="catalog__tab active">Лидеры продаж</div>
-            <div class="catalog__tab">Новинки</div>
+        <div class="popular__catalog">
+          <div class="popular__tabs-list">
+            <div class="popular__tab active">Лидеры продаж</div>
+            <div class="popular__tab">Новинки</div>
           </div>
-          <div class="catalog__cards-list">
-            <article class="catalog__card card">
-              <div class="card__image-wrapper">
-                <img class="card__img" src="./img/card-photo-1.jpg" alt="Пробирки Фалькон конические">
-              </div>
+          <div class="popular__card-list">
+            <article class="card">
+              <img class="card__img" src="./img/card-photo-1.jpg" alt="Пробирки Фалькон конические">
               <h3 class="card__title">Пробирки Фалькон конические</h3>
               <div class="card__info">
                 <div>
@@ -203,10 +202,8 @@
                 </div>
               </div>
             </article>
-            <article class="catalog__card card">
-              <div class="card__image-wrapper">
-                <img class="card__img" src="./img/card-photo-2.jpg" alt="Пробирки Фалькон конические">
-              </div>
+            <article class="card">
+              <img class="card__img" src="./img/card-photo-2.jpg" alt="Пробирки Фалькон конические">
               <h3 class="card__title">Пробирки конические центрифужные</h3>
               <div class="card__info">
                 <div>
@@ -223,10 +220,10 @@
                 </div>
               </div>
             </article>
-            <article class="catalog__card card">
-              <div class="card__image-wrapper">
-                <img class="card__img" src="./img/card-photo-3.jpg" alt="Пробирки Фалькон конические">
-              </div>
+            <article class="card">
+
+              <img class="card__img" src="./img/card-photo-3.jpg" alt="Пробирки Фалькон конические">
+
               <h3 class="card__title">Пробирки круглодонные</h3>
               <div class="card__info">
                 <div>
@@ -243,10 +240,10 @@
                 </div>
               </div>
             </article>
-            <article class="catalog__card card">
-              <div class="card__image-wrapper">
-                <img class="card__img" src="./img/card-photo-4.jpg" alt="Пробирки Фалькон конические">
-              </div>
+            <article class="card">
+
+              <img class="card__img" src="./img/card-photo-4.jpg" alt="Пробирки Фалькон конические">
+
               <h3 class="card__title">Чашки Петри</h3>
               <div class="card__info">
                 <div>
@@ -263,10 +260,10 @@
                 </div>
               </div>
             </article>
-            <article class="catalog__card card">
-              <div class="card__image-wrapper">
-                <img class="card__img" src="./img/card-photo-5.jpg" alt="Пробирки Фалькон конические">
-              </div>
+            <!-- <article class="card">
+
+              <img class="card__img" src="./img/card-photo-5.jpg" alt="Пробирки Фалькон конические">
+
               <h3 class="card__title">Кюветы для коагулометров Solar</h3>
               <div class="card__info">
                 <div>
@@ -282,96 +279,113 @@
                   <span class="card__feature-value">350х250х216 мм</span>
                 </div>
               </div>
-            </article>
+            </article> -->
           </div>
         </div>
-        <ul class="pagination pagination--center">
-          <li class="pagination__page">Prev</li>
-          <li class="pagination__page active">1</li>
-          <li class="pagination__page ">2</li>
-          <li class="pagination__page ">3</li>
-          <li class="pagination__page ">4</li>
-          <li class="pagination__page">Next</li>
-        </ul>
+        <div class="pagination pagination--center">
+
+          <svg class="pagination__page width=" 43" height="42" viewBox="0 0 43 42" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M15.1464 21.3536C14.9512 21.1583 14.9512 20.8417 15.1464 20.6464L18.3284 17.4645C18.5237 17.2692 18.8403 17.2692 19.0355 17.4645C19.2308 17.6597 19.2308 17.9763 19.0355 18.1716L16.2071 21L19.0355 23.8284C19.2308 24.0237 19.2308 24.3403 19.0355 24.5355C18.8403 24.7308 18.5237 24.7308 18.3284 24.5355L15.1464 21.3536ZM27.5 21.5H15.5V20.5H27.5V21.5Z"
+              fill="#126FB4" />
+          </svg>
+
+          <div class="pagination__page active">1</div>
+          <div class="pagination__page ">2</div>
+          <div class="pagination__page ">3</div>
+          <div class="pagination__page ">4</div>
+          <svg class="pagination__page width=" 43" height="42" viewBox="0 0 43 42" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M27.8536 21.3536C28.0488 21.1583 28.0488 20.8417 27.8536 20.6464L24.6716 17.4645C24.4763 17.2692 24.1597 17.2692 23.9645 17.4645C23.7692 17.6597 23.7692 17.9763 23.9645 18.1716L26.7929 21L23.9645 23.8284C23.7692 24.0237 23.7692 24.3403 23.9645 24.5355C24.1597 24.7308 24.4763 24.7308 24.6716 24.5355L27.8536 21.3536ZM15.5 21.5H27.5V20.5H15.5V21.5Z"
+              fill="#126FB4" />
+          </svg>
+
+
+        </div>
       </div>
       </div>
     </section>
 
     <section class="advantages">
-      <div class=" advantages__wrapper container">
+      <div class="container advantages__wrapper">
         <h2 class="advantages__title section-title">Почему выбирают нас</h2>
         <div class="advantages__list">
-          <article class="advantages__item article">
-            <h3 class="article__title">Мы являемся экспертами в своём сегменте</h3>
-            <ul class="article__list">
-              <li class="article__item">Опыт производства изделий полного цикла более 30 лет
+          <article class="advantages__item advantage">
+            <h3 class="advantage__title">Мы являемся экспертами в своём сегменте</h3>
+            <ul class="advantage__list">
+              <li>Опыт производства изделий полного цикла более 30 лет
               </li>
-              <li class="article__item">Актуальный ассортимент продукции в соответствии с запросами времени</li>
-              <li class="article__item">Индекс доверия потребителей к продукции группы компаний Литопласт составляет
+              <li>Актуальный ассортимент продукции в соответствии с запросами времени</li>
+              <li>Индекс доверия потребителей к продукции группы компаний Литопласт составляет
                 87%
               </li>
-              <li class="article__item">Современная техническая база позволяет обрабатывать даже самые требовательные
+              <li>Современная техническая база позволяет обрабатывать даже самые
+                требовательные
                 запросы</li>
-              <li class="article__item">Постоянно поддерживаем стабильно высокий профессиональный уровень Специалистов
+              <li>Постоянно поддерживаем стабильно высокий профессиональный уровень
+                Специалистов
               </li>
-              <li class="article__item">Провидим регулярные маркетинговые исследования
+              <li>Провидим регулярные маркетинговые исследования
               </li>
             </ul>
           </article>
-          <article class="advantages__item article">
-            <h3 class="article__title">Надежная техническая база</h3>
-            <ul class="article__list">
-              <li class="article__item">Парк оборудования ведущих мировых производителей
+          <article class="advantages__item advantage">
+            <h3 class="advantage__title">Надежная техническая база</h3>
+            <ul class="advantage__list">
+              <li>Парк оборудования ведущих мировых производителей
               </li>
-              <li class="article__item">Постоянно инвестируем в модернизацию оборудования</li>
-
-              <li class="article__item">Отслеживаем появление новых технологий и оцениваем возможность применения
+              <li>Постоянно инвестируем в модернизацию оборудования</li>
+              <li>Отслеживаем появление новых технологий и оцениваем возможность применения
                 их на производстве</li>
-              <li class="article__item">Регулярное обслуживание оборудования и наличие страхового запаса расходников
+              <li>Регулярное обслуживание оборудования и наличие страхового запаса расходников
               </li>
-              <li class="article__item">
+              <li>
                 Наличие инструментального цеха, позволяющего оперативно произвести различные виды ремонта
                 оборудования,
                 пресс-форм
               </li>
             </ul>
           </article>
-          <article class="advantages__item article">
-            <h3 class="article__title">Безопасность и система сертификации</h3>
-            <ul class="article__list">
-              <li class="article__item">Руководствуемся многоуровневой системой контроля на всех этапах производства
+          <article class="advantages__item advantage">
+            <h3 class="advantage__title">Безопасность и система сертификации</h3>
+            <ul class="advantage__list">
+              <li>Руководствуемся многоуровневой системой контроля на всех этапах производства
               </li>
-              <li class="article__item">
+              <li>
                 Стабильно высокое качество продукции и её безопасность для наших клиентов подкреплены всеми
                 необходимыми
                 сертификатами
               </li>
-              <li class="article__item">Осуществляем строгий контроль проверки сырьевых составляющих</li>
-              <li class="article__item">Работа на нашем предприятии организована в соответствии с Международным
+              <li>Осуществляем строгий контроль проверки сырьевых составляющих</li>
+              <li>Работа на нашем предприятии организована в соответствии с Международным
                 сертификатом ISO 9001</li>
-              <li class="article__item">
+              <li>
                 На направлении производства медицинской продукции из пластика дополнительно действуют стандарты,
                 установленные Международным сертификатом ISO 13485
               </li>
             </ul>
           </article>
-          <article class="advantages__item article">
-            <h3 class="article__title">Следуем принципам партнерского менеджмента</h3>
-            <ul class="article__list">
-              <li class="article__item">
+          <article class="advantages__item advantage">
+            <h3 class="advantage__title">Следуем принципам партнерского менеджмента</h3>
+            <ul class="advantage__list">
+              <li>
                 Постоянно улучшаем качество продукции, минимизируем затраты на её изготовление, рационально используем
                 сырьевые ресурсы
               </li>
-              <li class="article__item">Устанавливаем демократичные и справедливые цены</li>
-              <li class="article__item">Выстраиваем и поддерживаем долгие доверительные отношения с клиентами
+              <li>Устанавливаем демократичные и справедливые цены</li>
+              <li>Выстраиваем и поддерживаем долгие доверительные отношения с клиентами
                 и партнёрами</li>
-              <li class="article__item">Занимаемся диверсифицированным бизнесом, который позволяет исключать возможные
+              <li>Занимаемся диверсифицированным бизнесом, который позволяет исключать
+                возможные
                 риски</li>
-              <li class="article__item">Стабильность является гарантией нашего успеха</li>
+              <li>Стабильность является гарантией нашего успеха</li>
             </ul>
           </article>
         </div>
         <p class="advantages__slogan big-text">Качество в каждом продукте</p>
+
 
 
       </div>
@@ -418,16 +432,31 @@
             <img src="./img/partners/12.jpg" alt="Milavatsa" class="partners__img">
           </li>
         </ul>
-        <ul class="pagination pagination--center">
-          <li class="pagination__page">Prev</li>
-          <li class="pagination__page active">1</li>
-          <li class="pagination__page ">2</li>
-          <li class="pagination__page ">3</li>
-          <li class="pagination__page ">4</li>
-          <li class="pagination__page">Next</li>
-        </ul>
+        <div class="pagination pagination--center">
+
+          <svg class="pagination__page width=" 43" height="42" viewBox="0 0 43 42" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M15.1464 21.3536C14.9512 21.1583 14.9512 20.8417 15.1464 20.6464L18.3284 17.4645C18.5237 17.2692 18.8403 17.2692 19.0355 17.4645C19.2308 17.6597 19.2308 17.9763 19.0355 18.1716L16.2071 21L19.0355 23.8284C19.2308 24.0237 19.2308 24.3403 19.0355 24.5355C18.8403 24.7308 18.5237 24.7308 18.3284 24.5355L15.1464 21.3536ZM27.5 21.5H15.5V20.5H27.5V21.5Z"
+              fill="#126FB4" />
+          </svg>
+
+          <div class="pagination__page active">1</div>
+          <div class="pagination__page ">2</div>
+          <div class="pagination__page ">3</div>
+          <div class="pagination__page ">4</div>
+          <svg class="pagination__page width=" 43" height="42" viewBox="0 0 43 42" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M27.8536 21.3536C28.0488 21.1583 28.0488 20.8417 27.8536 20.6464L24.6716 17.4645C24.4763 17.2692 24.1597 17.2692 23.9645 17.4645C23.7692 17.6597 23.7692 17.9763 23.9645 18.1716L26.7929 21L23.9645 23.8284C23.7692 24.0237 23.7692 24.3403 23.9645 24.5355C24.1597 24.7308 24.4763 24.7308 24.6716 24.5355L27.8536 21.3536ZM15.5 21.5H27.5V20.5H15.5V21.5Z"
+              fill="#126FB4" />
+          </svg>
+
+
+        </div>
       </div>
     </section>
+
 
     <section class="feedback">
       <div class="feedback__wrapper container">
@@ -448,14 +477,23 @@
             <div class="form__bottom-contacts">
               <p class="form__text">Выберите направление запроса:</p>
               <div class="form__radios">
-                <input type="radio" name="request-type" id="request-type1">
-                <label for="request-type1">Медицинские изделия</label>
-                <input type="radio" name="request-type" id="request-type2">
-                <label for="request-type2">Нагревательные системы</label>
-                <input type="radio" name="request-type" id="request-type3">
-                <label for="request-type3">Электроника</label>
-                <input type="radio" name="request-type" id="request-type4">
-                <label for="request-type4">Изделия из пластмасс</label>
+
+                <label>
+                  <input type="radio" name="request-type">
+                  Медицинские изделия
+                </label>
+                <label>
+                  <input type="radio" name="request-type">
+                  Нагревательные системы
+                </label>
+                <label>
+                  <input type="radio" name="request-type">
+                  Электроника
+                </label>
+                <label>
+                  <input type="radio" name="request-type">
+                  Изделия из пластмасс
+                </label>
               </div>
             </div>
             <button class="form__button button button--main" type="submit">Отправить запрос</button>
@@ -492,9 +530,15 @@
               <a class="shop__email" href="#">med@litoplast.by</a>
               <a class="shop__phone" href="#">+375 44 599-50-60</a>
               <div class="shop__social-list">
-                <a href="#" class="messenger-icon messenger-icon--telegram"></a>
-                <a href="#" class="messenger-icon messenger-icon--viber"></a>
-                <a href="#" class="messenger-icon messenger-icon--whatsapp"></a>
+                <a href="#">
+                  <img src="./img/icons/telegram.svg" alt="Telegram">
+                </a>
+                <a href="#">
+                  <img src="./img/icons/viber.svg" alt="Viber">
+                </a>
+                <a href="#">
+                  <img src="./img/icons/whatsapp.svg" alt="Whatsapp">
+                </a>
               </div>
             </div>
             <div class="contacts__shop-item shop">
@@ -505,9 +549,15 @@
               <a class="shop__email" href="#">plast@litoplast.by</a>
               <a class="shop__phone" href="#">+375 29 377-80-23</a>
               <div class="shop__social-list">
-                <a href="#" class="messenger-icon messenger-icon--telegram"></a>
-                <a href="#" class="messenger-icon messenger-icon--viber"></a>
-                <a href="#" class="messenger-icon messenger-icon--whatsapp"></a>
+                <a href="#">
+                  <img src="./img/icons/telegram.svg" alt="Telegram">
+                </a>
+                <a href="#">
+                  <img src="./img/icons/viber.svg" alt="Viber">
+                </a>
+                <a href="#">
+                  <img src="./img/icons/whatsapp.svg" alt="Whatsapp">
+                </a>
               </div>
             </div>
             <div class="contacts__shop-item shop">
@@ -518,9 +568,15 @@
               <a class="shop__email" href="#">wirt@litoplast.by</a>
               <a class="shop__phone" href="#">+375 29 617-07-75</a>
               <div class="shop__social-list">
-                <a href="#" class="messenger-icon messenger-icon--telegram"></a>
-                <a href="#" class="messenger-icon messenger-icon--viber"></a>
-                <a href="#" class="messenger-icon messenger-icon--whatsapp"></a>
+                <a href="#">
+                  <img src="./img/icons/telegram.svg" alt="Telegram">
+                </a>
+                <a href="#">
+                  <img src="./img/icons/viber.svg" alt="Viber">
+                </a>
+                <a href="#">
+                  <img src="./img/icons/whatsapp.svg" alt="Whatsapp">
+                </a>
               </div>
             </div>
             <div class="contacts__shop-item shop">
@@ -531,9 +587,15 @@
               <a class="shop__email" href="#">zsl_024@litoplast.by</a>
               <a class="shop__phone" href="#">+375 29 694-44-28</a>
               <div class="shop__social-list">
-                <a href="#" class="messenger-icon messenger-icon--telegram"></a>
-                <a href="#" class="messenger-icon messenger-icon--viber"></a>
-                <a href="#" class="messenger-icon messenger-icon--whatsapp"></a>
+                <a href="#">
+                  <img src="./img/icons/telegram.svg" alt="Telegram">
+                </a>
+                <a href="#">
+                  <img src="./img/icons/viber.svg" alt="Viber">
+                </a>
+                <a href="#">
+                  <img src="./img/icons/whatsapp.svg" alt="Whatsapp">
+                </a>
               </div>
             </div>
             <div class="contacts__shop-item shop">
@@ -544,21 +606,27 @@
               <a class="shop__email" href="#">marketing@litoplast.by</a>
               <a class="shop__phone" href="#">+375 17 399-50-04</a>
               <div class="shop__social-list">
-                <a href="#" class="messenger-icon messenger-icon--telegram"></a>
-                <a href="#" class="messenger-icon messenger-icon--viber"></a>
-                <a href="#" class="messenger-icon messenger-icon--whatsapp"></a>
+                <a href="#">
+                  <img src="./img/icons/telegram.svg" alt="Telegram">
+                </a>
+                <a href="#">
+                  <img src="./img/icons/viber.svg" alt="Viber">
+                </a>
+                <a href="#">
+                  <img src="./img/icons/whatsapp.svg" alt="Whatsapp">
+                </a>
               </div>
             </div>
           </div>
 
         </div>
       </div>
-    </section> -->
+    </section>
 
   </main>
 
-  <!-- <footer class="footer">
-    <div class="container">
+  <footer class="footer">
+    <div class="footer__wrapper container">
       <div class="footer__top">
         <img src="./img/logo.svg" class="footer__logo"" alt=" Литопласт">
       </div>
@@ -607,7 +675,7 @@
       </div>
       <div class="footer__copyright">© 1992-2022, «ЛИТОПЛАСТ»</div>
     </div>
-  </footer> -->
+  </footer>
 </body>
 
 </html>

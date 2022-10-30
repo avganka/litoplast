@@ -1,0 +1,118 @@
+.footer {
+  background-color: #f6faff;
+  &__wrapper {
+    padding-top: 30px;
+    padding-bottom: 20px;
+  }
+  &__top {
+    margin-bottom: 50px;
+    @include mobile {
+      margin-bottom: 30px;
+    }
+  }
+  &__logo {
+    display: block;
+    margin: 0 auto;
+  }
+  &__main {
+    display: grid;
+    column-gap: 30px;
+    row-gap: 70px;
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 50px;
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include mobile {
+      row-gap: 30px;
+      column-gap: 10px;
+      margin-bottom: 30px;
+    }
+  }
+  &__menu {
+    text-align: left;
+  }
+  &__menu:nth-child(-n + 3) {
+    grid-row: span 2;
+  }
+  &__menu-title {
+    font-family: 'PF DinText Pro';
+    font-weight: 400;
+    font-size: 20px;
+    color: $accent;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $accent;
+    line-height: 1.5;
+    padding-left: 20px;
+    margin-bottom: 20px;
+    @include mobile {
+      font-size: 16px;
+      padding-left: 10px;
+      margin-bottom: 10px;
+    }
+  }
+  &__menu-list {
+    list-style: none;
+  }
+  &__menu-item {
+    padding-left: 20px;
+    font-family: 'Gilroy';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    @include mobile {
+      font-size: 12px;
+      padding-left: 10px;
+    }
+  }
+  &__menu-item:not(:last-child) {
+    margin-bottom: 20px;
+    @include mobile {
+      margin-bottom: 10px;
+    }
+  }
+  &__menu-social-list {
+    display: flex;
+    gap: 20px;
+    padding-left: 20px;
+  }
+  &__menu-social-item {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    &--youtube {
+      background-image: url('../img/icons/youtube.svg');
+    }
+    &--facebook {
+      background-image: url('../img/icons/facebook.svg');
+    }
+    &--instagram {
+      background-image: url('../img/icons/instagram.svg');
+    }
+  }
+  &__button {
+    display: block;
+    margin-left: 20px;
+    @include mobile {
+      margin-left: 10px;
+      padding: 8px 25px;
+    }
+  }
+  &__copyright {
+    border-top: 1px solid #d8e1ef;
+    padding-top: 20px;
+    color: #d8e1ef;
+    font-family: 'Gilroy', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    text-transform: uppercase;
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+}

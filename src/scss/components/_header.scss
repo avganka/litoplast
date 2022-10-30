@@ -26,6 +26,22 @@
     flex-grow: 1;
     flex-basis: 45%;
   }
+
+  &__menu,
+  &__contacts,
+  &__logo-wrapper {
+    @include tablet {
+      flex-basis: calc(100% / 3);
+    }
+  }
+
+  &__contacts {
+    justify-content: flex-end;
+    gap: 30px;
+    @include mobile {
+      gap: 20px;
+    }
+  }
   &__logo {
     display: block;
     margin: 0 auto;
@@ -38,31 +54,10 @@
     display: flex;
     align-items: center;
   }
-  &__menu-catalog {
-    @include tablet {
-      display: none;
-    }
-    @include mobile {
-      display: none;
-    }
-  }
 
-  &__menu,
-  &__contacts,
-  &__logo-wrapper {
-    flex-basis: calc(100% / 3);
-  }
-
-  &__contacts {
-    justify-content: flex-end;
-    gap: 30px;
-    @include mobile {
-      gap: 20px;
-    }
-  }
   &__menu-catalog,
   &__contacts-button {
-    @include mobile {
+    @include tablet {
       display: none;
     }
   }

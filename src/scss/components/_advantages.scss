@@ -1,0 +1,38 @@
+.advantages {
+  &__wrapper {
+    background-image: url('../img/advantages-bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-top: 100px;
+    @include mobile {
+      padding-top: 50px;
+      padding-bottom: 40px;
+      margin-bottom: 0;
+    }
+  }
+  &__title {
+    color: #ffffff;
+    margin-bottom: 50px;
+    @include mobile {
+      margin-bottom: 30px;
+    }
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 30px;
+    row-gap: 50px;
+    margin-bottom: 50px;
+    @include mobile {
+      grid-template-columns: 1fr;
+      row-gap: 30px;
+      margin-bottom: 30px;
+    }
+  }
+  &__slogan {
+    color: #ffffff;
+  }
+}

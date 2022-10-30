@@ -1,0 +1,101 @@
+.production {
+  &__header {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: left;
+    margin-bottom: 50px;
+    @include mobile {
+      display: block;
+      margin-bottom: 30px;
+    }
+  }
+  &__title {
+    padding-right: 50px;
+    @include mobile {
+      margin-bottom: 20px;
+    }
+  }
+  &__gallery-list {
+    margin: 0 calc($desktop-padding * -1);
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    @include mobile {
+      margin: 0;
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 30px;
+      column-gap: 10px;
+    }
+  }
+  &__gallery-list--one-row {
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+  &__gallery-list--one-row &__img {
+    @include mobile {
+      height: 150px;
+    }
+  }
+  &__gallery-list--one-row &__name {
+    @include mobile {
+      margin-top: 20px;
+    }
+  }
+  &__gallery-item {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: relative;
+    @include mobile {
+      text-align: left;
+      background-color: transparent;
+    }
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    position: relative;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+    @include mobile {
+      height: 120px;
+    }
+  }
+  &__img:hover {
+    @media only screen and (min-width: 990px) {
+      cursor: pointer;
+      opacity: 0;
+    }
+  }
+  &__img:hover ~ &__name {
+    opacity: 1;
+  }
+  &__name {
+    font-family: 'PF DinText Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.3;
+    color: #ffffff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    @include mobile {
+      margin-top: 10px;
+      color: $dark;
+      position: static;
+      transform: none;
+      top: auto;
+      left: auto;
+    }
+  }
+  &__text {
+    display: none;
+    @include mobile {
+      margin-top: 10px;
+      display: block;
+    }
+  }
+}

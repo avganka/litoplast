@@ -1,0 +1,32 @@
+.partners {
+  &__title {
+    margin-bottom: 50px;
+  }
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    list-style: none;
+    margin-bottom: 50px;
+    @include mobile {
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+  }
+  &__item {
+    flex-basis: 190px;
+    @include mobile {
+      flex-basis: 165px;
+    }
+  }
+  &__img {
+    display: block;
+    width: 100%;
+    height: 65px;
+    object-fit: cover;
+    @include mobile {
+      flex-basis: 55px;
+    }
+  }
+}

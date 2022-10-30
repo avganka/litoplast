@@ -1,0 +1,42 @@
+.contacts {
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 100px;
+    row-gap: 30px;
+    @include tablet {
+      grid-template-columns: 1fr;
+      margin-bottom: 50px;
+    }
+  }
+  &__title {
+    margin-bottom: 50px;
+  }
+  &__info {
+    text-align: left;
+    max-width: 520px;
+    @include tablet {
+      max-width: none;
+      width: 100%;
+    }
+  }
+  &__text {
+    margin-bottom: 30px;
+    color: $grey;
+    p {
+      padding-bottom: 7px;
+    }
+  }
+  &__map {
+    @include tablet {
+      width: 100%;
+    }
+  }
+  &__shop-list {
+    display: flex;
+    flex-direction: column;
+  }
+  &__shop-item:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
