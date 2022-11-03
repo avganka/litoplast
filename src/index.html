@@ -9,35 +9,163 @@
 
 <body>
 
-  <div class="cookies">
-    <div class="cookies__wrapper">
-      <p>При использовании данного сайта, вы подтверждаете свое согласие на использование файлов
-        cookie в соответствии с
-        <a href="#">политикой обработки персональных данных</a>.
-      </p>
-      <p class="cookies__btn">Всё понятно</p>
-    </div>
-  </div>
-
   <header class="header">
     <div class="header__wrapper container">
-      <div class="header__menu">
-        <button class="button button--main button--menu">Меню</button>
-        <button class="header__menu-catalog button button--transparent button--catalog">Каталог</button>
+
+      <nav class="header__navbar">
+        <div class="navbar__main-menu-wrapper">
+          <div class="navbar__main-menu-button button burger">
+            <div class="burger__wrapper">
+              <div class="burger__line burger__line--1"></div>
+              <div class="burger__line burger__line--2"></div>
+              <div class="burger__line burger__line--3"></div>
+              <div class="burger__line burger__line--4"></div>
+            </div>
+            <div class="burger__text">Меню</div>
+          </div>
+          <div class="navbar__main-menu">
+            <div class="menu">
+              <h3 class="menu__title">Каталог продукции</h3>
+              <ul class="menu__list">
+                <li class="menu__item--dropdown">
+                  <span>Изделия медицинского назначения</span>
+                  <svg width="8" height="14">
+                    <use xlink:href="#arrow-down"></use>
+                  </svg>
+                  <ul class="menu__list">
+                    <li>
+                      <a class="menu__link" href="#">Бытовые изделия из пластика</a>
+                    </li>
+                    <li>
+                      <a class="menu__link" href="#">Колпачки и плечи для тубной упаковки</a>
+                    </li>
+                    <li>
+                      <a class="menu__link" href="#">Швейные изделия из пластика</a>
+                    </li>
+                    <li>
+                      <a class="menu__link" href="#">Корпуса для электроприборов (корпуса на DIN рейку)</a>
+                    </li>
+                    <li>
+                      <a class="menu__link" href="#">Брендирование продукции из пластика</a>
+                    </li>
+                    <li>
+                      <a class="menu__link" href="#">Изготовление продукции из пластика на заказ</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="menu__item--dropdown">
+                  <span>Изделия из пластмасс</span>
+                  <svg width="8" height="14">
+                    <use xlink:href="#arrow-down"></use>
+                  </svg>
+                  <ul class="menu__list">
+                    <li>
+                      <a class="menu__link" href="#">Бытовые изделия из пластика</a>
+                    </li>
+                    <li>
+                      <a class="menu__link" href="#">Колпачки и плечи для тубной упаковки</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="menu__item menu__item--dropdown">Нагревательные системы
+                  <svg width="8" height="14">
+                    <use xlink:href="#arrow-down"></use>
+                  </svg>
+                </li>
+                <li class="menu__item menu__item--dropdown">Электронные компоненты
+                  <svg width="8" height="14">
+                    <use xlink:href="#arrow-down"></use>
+                  </svg>
+                </li>
+                <li>
+                  <a class="menu__link" href="#">Пресс-формы для литья</a>
+                </li>
+              </ul>
+            </div>
+            <div class="menu">
+              <h3 class="menu__title">Услуги</h3>
+              <ul class="menu__list">
+                <li><a class="menu__link" href="#">Нагревательный кабель на заказ</a></li>
+                <li><a class="menu__link" href="#">Литье изделий из пластмасс</a></li>
+                <li><a class="menu__link" href="#">Брендирование продукции из пластмасс</a></li>
+                <li><a class="menu__link" href="#">Контрактное производство электроники</a></li>
+              </ul>
+            </div>
+            <div class="menu">
+              <h3 class="menu__title">О компании</h3>
+              <ul class="menu__list">
+                <li><a class="menu__link" href="#">О компании</a></li>
+                <li><a class="menu__link" href="#">Пресс-блог</a></li>
+                <li><a class="menu__link" href="#">Как купить</a></li>
+                <li><a class="menu__link" href="#">Политика конфиденциальности</a></li>
+                <li><a class="menu__link" href="#">Обработка персональных данных</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="navbar__catalog-wrapper">
+          <button class="navbar__catalog-button button button--transparent button--catalog">Каталог</button>
+
+          <ul class="navbar__catalog-menu">
+            <li>
+              <a href="#" class="navbar__catalog-menu-link">Изделия медицинского назначения из пластмасс</a>
+            </li>
+            <li>
+              <a href="#" class="navbar__catalog-menu-link">Изделия из пластмасс</a>
+              <ul class="navbar__catalog-submenu">
+                <li>
+                  <a href="#" class="navbar__catalog-submenu-link">Бытовые изделия из пластика</a>
+                </li>
+                <li>
+                  <a href="#" class="navbar__catalog-submenu-link">Колпачки и плечи для тубной упаковки</a>
+                </li>
+                <li>
+                  <a href="#" class="navbar__catalog-submenu-link">Швейные изделия из пластика</a>
+                </li>
+                <li>
+                  <a href="#" class="navbar__catalog-submenu-link">Корпуса для электроприборов (корпуса на DIN
+                    рейку)</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" class="navbar__catalog-menu-link">Нагревательные системы</a>
+            </li>
+            <li>
+              <a href="#" class="navbar__catalog-menu-link">Электронные компоненты</a>
+            </li>
+            <li>
+              <a href="#" class="navbar__catalog-menu-link">Пресс-формы для литья</a>
+            </li>
+          </ul>
+
+        </div>
+      </nav>
+
+      <div class="header__logo">
+        <a href="#">
+          <img class="header__logo-image" src="./img/logo.svg" alt="Литопласт">
+        </a>
       </div>
-      <div class="header__logo-wrapper">
-        <img class="header__logo" src="./img/logo.svg" alt="Литопласт">
-      </div>
+
       <div class="header__contacts">
-        <img class="header__icon" src="./img/icons/phone.svg" alt="">
-        <button class="header__contacts-button button button--main">Оставить заявку</button>
-        <img class="header__icon header__icon--search" src="./img/icons/search.svg" alt="">
-        <div>
+        <img class="header__icon header__icon--phone" src="./img/icons/phone.svg" alt="">
+        <button class="header__feedback-button button button--main">Оставить заявку</button>
+        <div class="header__search">
+          <input class="search__input" type="text" placeholder="Искать на сайте">
+          <img class="search__search-icon" src="./img/icons/search.svg" alt="">
+          <img class="search__close-icon" src="./img/icons/close.svg" alt="">
+        </div>
+        <div class="header__lang">
           <a href="/" class="header__lang-button active">RU</a>
           <span>/</span>
           <a href="/en" class="header__lang-button">ENG</a>
         </div>
+
+
       </div>
+
+    </div>
   </header>
 
   <main>
@@ -48,8 +176,9 @@
           </h1>
           <span>Производство полного цикла с 1992 года</span>
           <p class="slider__subtitle">Ценим традиции, следуем запросам времени</p>
-          <p class="slider__description slider__description--arrowed">Используем только лучшие азработки и технические
+          <p class="slider__description">Используем только лучшие азработки и технические
             решения для производства продуктов по направлениям
+            <img src="./img/icons/arrow.svg" alt="">
           </p>
 
           <div>
@@ -642,51 +771,87 @@
         <img src="./img/logo.svg" class="footer__logo"" alt=" Литопласт">
       </div>
       <div class="footer__main">
-        <div class="footer__menu">
-          <h3 class="footer__menu-title">Каталог продукции</h3>
-          <ul class="footer__menu-list">
-            <li class="footer__menu-item">Изделия медицинского назначения</li>
-            <li class="footer__menu-item">Изделия из пластмасс</li>
-            <li class="footer__menu-item">Нагревательные системы</li>
-            <li class="footer__menu-item">Электронные компоненты</li>
-            <li class="footer__menu-item">Пресс-формы для литья</li>
+        <div class="footer__menu menu">
+          <h3 class="menu__title">Каталог продукции</h3>
+          <ul class="menu__list">
+            <li><a class="menu__link" href="#">Изделия медицинского назначения</a></li>
+            <li><a class="menu__link" href="#">Изделия из пластмасс</a></li>
+            <li><a class="menu__link" href="#">Нагревательные системы</a></li>
+            <li><a class="menu__link" href="#">Электронные компоненты</a></li>
+            <li><a class="menu__link" href="#">Пресс-формы для литья</a></li>
           </ul>
         </div>
-        <div class="footer__menu">
-          <h3 class="footer__menu-title">Услуги</h3>
-          <ul class="footer__menu-list">
-            <li class="footer__menu-item">Нагревательный кабель на заказ</li>
-            <li class="footer__menu-item">Литье изделий из пластмасс</li>
-            <li class="footer__menu-item">Брендирование продукции из пластмасс</li>
-            <li class="footer__menu-item">Контрактное производство электроники</li>
+        <div class="footer__menu menu">
+          <h3 class="menu__title">Услуги</h3>
+          <ul class="menu__list">
+            <li><a class="menu__link" href="#">Нагревательный кабель на заказ</a></li>
+            <li><a class="menu__link" href="#">Литье изделий из пластмасс</a></li>
+            <li><a class="menu__link" href="#">Брендирование продукции из пластмасс</a></li>
+            <li><a class="menu__link" href="#">Контрактное производство электроники</a></li>
           </ul>
         </div>
-        <div class="footer__menu">
-          <h3 class="footer__menu-title">О компании</h3>
-          <ul class="footer__menu-list">
-            <li class="footer__menu-item">О компании</li>
-            <li class="footer__menu-item">Пресс-блог</li>
-            <li class="footer__menu-item">Как купить</li>
-            <li class="footer__menu-item">Политика конфиденциальности</li>
-            <li class="footer__menu-item">Обработка персональных данных</li>
+        <div class="footer__menu menu">
+          <h3 class="menu__title">О компании</h3>
+          <ul class="menu__list">
+            <li><a class="menu__link" href="#">О компании</a></li>
+            <li><a class="menu__link" href="#">Пресс-блог</a></li>
+            <li><a class="menu__link" href="#">Как купить</a></li>
+            <li><a class="menu__link" href="#">Политика конфиденциальности</a></li>
+            <li><a class="menu__link" href="#">Обработка персональных данных</a></li>
           </ul>
         </div>
-        <div class="footer__menu">
-          <h3 class="footer__menu-title">Социальные сети</h3>
-          <div class="footer__menu-social-list">
-            <a href="#" class="footer__menu-social-item footer__menu-social-item--youtube"></a>
-            <a href="#" class="footer__menu-social-item footer__menu-social-item--facebook"></a>
-            <a href="#" class="footer__menu-social-item footer__menu-social-item--instagram"></a>
+        <div class="footer__menu menu">
+          <h3 class="menu__title">Социальные сети</h3>
+          <div class="menu__social-list">
+            <a href="#" class="menu__social-item">
+              <img src="./img/icons/youtube.svg" alt="Youtube">
+            </a>
+            <a href="#" class="menu__social-item">
+              <img src="./img/icons/facebook.svg" alt="Facebook">
+            </a>
+            <a href="#" class="menu__social-item">
+              <img src="./img/icons/instagram.svg" alt="Instagram">
+            </a>
           </div>
         </div>
-        <div class="footer__menu">
-          <h3 class="footer__menu-title">Обратная связь</h3>
-          <button class="footer__button button button--main">Отправить запрос</button>
+        <div class="footer__menu menu">
+          <h3 class="menu__title">Обратная связь</h3>
+          <button class="menu__button button button--main">Отправить запрос</button>
         </div>
       </div>
       <div class="footer__copyright">© 1992-2022, «ЛИТОПЛАСТ»</div>
     </div>
   </footer>
+
+  <div class="cookies">
+    <div class="cookies__wrapper">
+      <p>При использовании данного сайта, вы подтверждаете свое согласие на использование файлов
+        cookie в соответствии с
+        <a href="#">политикой обработки персональных данных</a>.
+      </p>
+      <p class="cookies__btn">Всё понятно</p>
+    </div>
+  </div>
+
+  <svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
+
+    <symbol id="arrow-down" width="8" height="14" viewBox="0 0 8 14">
+      <path
+        d="M4.35355 13.3536C4.15829 13.5488 3.84171 13.5488 3.64645 13.3536L0.464466 10.1716C0.269204 9.97631 0.269204 9.65973 0.464466 9.46447C0.659728 9.2692 0.976311 9.2692 1.17157 9.46447L4 12.2929L6.82843 9.46447C7.02369 9.2692 7.34027 9.2692 7.53553 9.46447C7.7308 9.65973 7.7308 9.97631 7.53553 10.1716L4.35355 13.3536ZM4.5 0L4.5 13H3.5L3.5 0L4.5 0Z" />
+    </symbol>
+
+    <symbol id="arrow-next" width="43" height="42" viewBox="0 0 43 42">
+      <path
+        d="M27.8536 21.3536C28.0488 21.1583 28.0488 20.8417 27.8536 20.6464L24.6716 17.4645C24.4763 17.2692 24.1597 17.2692 23.9645 17.4645C23.7692 17.6597 23.7692 17.9763 23.9645 18.1716L26.7929 21L23.9645 23.8284C23.7692 24.0237 23.7692 24.3403 23.9645 24.5355C24.1597 24.7308 24.4763 24.7308 24.6716 24.5355L27.8536 21.3536ZM15.5 21.5H27.5V20.5H15.5V21.5Z" />
+    </symbol>
+
+    <symbol id="arrow-prev" width="43" height="42" viewBox="0 0 43 42">
+      <path
+        d="M15.1464 21.3536C14.9512 21.1583 14.9512 20.8417 15.1464 20.6464L18.3284 17.4645C18.5237 17.2692 18.8403 17.2692 19.0355 17.4645C19.2308 17.6597 19.2308 17.9763 19.0355 18.1716L16.2071 21L19.0355 23.8284C19.2308 24.0237 19.2308 24.3403 19.0355 24.5355C18.8403 24.7308 18.5237 24.7308 18.3284 24.5355L15.1464 21.3536ZM27.5 21.5H15.5V20.5H27.5V21.5Z" />
+    </symbol>
+
+  </svg>
+
 </body>
 
 </html>

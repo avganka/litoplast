@@ -75,6 +75,9 @@
   &__description {
     color: $grey;
     margin-bottom: auto;
+    img {
+      margin-left: 20px;
+    }
     @include tablet {
       margin-bottom: 30px;
     }
@@ -82,17 +85,7 @@
       font-size: 14px;
     }
   }
-  &__description--arrowed::after {
-    content: '';
-    display: inline-block;
-    background-image: url('../img/icons/arrow.svg');
-    width: 41px;
-    height: 8px;
-    margin-left: 20px;
-    @include mobile {
-      margin-left: 10px;
-    }
-  }
+
   &__pagination {
     position: absolute;
     right: $desktop-padding;
@@ -110,30 +103,4 @@
   &__button {
     display: inline-block;
   }
-  // @include media-mobile {
-  //   &__wrapper {
-  //     flex-wrap: wrap;
-  //     padding-top: 10px;
-  //   }
-  //   &__images {
-  //     padding-bottom: 40px;
-  //   }
-  //   &__title {
-  //
-  //   }
-  //   &__subtitle {
-
-  //   }
-  //   &__current-image {
-
-  //     margin-right: 30px;
-  //   }
-  //   &__next-image {
-  //
-  //   }
-  //   &__pagination {
-  //     bottom: 0;
-  //     right: $mobile-padding;
-  //   }
-  // }
 }

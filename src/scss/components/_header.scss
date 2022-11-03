@@ -1,6 +1,7 @@
 .header {
   &__wrapper {
     display: flex;
+    justify-content: space-between;
     padding-top: 22px;
     padding-bottom: 22px;
     position: relative;
@@ -10,26 +11,26 @@
     }
   }
 
-  &__menu {
-    flex-shrink: 1;
-    flex-basis: 45%;
-    @include tablet {
-      flex-basis: 35%;
-    }
+  &__navbar {
+    // flex-shrink: 1;
+    // flex-basis: 45%;
+    // @include tablet {
+    //   flex-basis: 35%;
+    // }
   }
-  &__logo-wrapper {
-    flex-shrink: 1;
-    flex-basis: 10%;
+  &__logo {
+    // flex-shrink: 1;
+    // flex-basis: 10%;
   }
 
   &__contacts {
-    flex-grow: 1;
-    flex-basis: 45%;
+    // flex-grow: 1;
+    // flex-basis: 45%;
   }
 
-  &__menu,
+  &__navbar,
   &__contacts,
-  &__logo-wrapper {
+  &__logo {
     @include tablet {
       flex-basis: calc(100% / 3);
     }
@@ -42,21 +43,20 @@
       gap: 20px;
     }
   }
-  &__logo {
+  &__logo-image {
     display: block;
     margin: 0 auto;
     @include mobile {
       width: 50px;
     }
   }
-  &__menu,
+  &__navbar,
   &__contacts {
     display: flex;
     align-items: center;
   }
 
-  &__menu-catalog,
-  &__contacts-button {
+  &__feedback-button {
     @include tablet {
       display: none;
     }
@@ -69,20 +69,12 @@
       height: 16px;
     }
   }
-  &__icon--search {
-    @include mobile {
-      display: none;
-    }
-  }
-
-  &__icon {
-    @include mobile {
-      width: 16px;
-      grid-template: 16px;
-    }
+  &__lang {
+    flex-grow: 1;
+    width: 70px;
   }
   &__lang-button {
-    flex-grow: 1;
+    display: inline-block;
     text-decoration: none;
     color: $dark;
     @include mobile {
@@ -92,5 +84,72 @@
   &__lang-button.active {
     box-shadow: 0 1px 0 $accent;
     color: $accent;
+  }
+  &__search {
+    transition: all 0.5s linear;
+    display: flex;
+    align-items: center;
+    position: relative;
+    border: none;
+    @include mobile {
+      display: none;
+    }
+  }
+}
+
+.header__search.active {
+  border-bottom: 1px solid $light-grey;
+}
+
+.header__search.active input {
+  width: 215px;
+}
+
+.header__search.active .search__close-icon {
+  opacity: 1;
+  z-index: 1;
+}
+
+._feedback-button {
+  transition: all 0.5s ease;
+  transform-origin: right;
+}
+
+.search {
+  &__input {
+    color: $accent;
+    font-family: 'Gilroy', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 0;
+    padding: 12px 0;
+    border: none;
+    outline: none;
+    flex-grow: 1;
+    width: 0;
+    transition: all 0.4s linear;
+
+    @include mobile {
+      display: none;
+    }
+  }
+  &__search-icon {
+    cursor: pointer;
+    margin: 0 13px;
+    @include mobile {
+      display: none;
+    }
+  }
+  &__close-icon {
+    cursor: pointer;
+    transition: all 0.5s ease;
+
+    opacity: 0;
+    z-index: -1;
+
+    // opacity: 1;
+    // z-index: 1;
   }
 }
