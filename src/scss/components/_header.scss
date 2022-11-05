@@ -12,20 +12,17 @@
   }
 
   &__navbar {
-    // flex-shrink: 1;
-    // flex-basis: 45%;
-    // @include tablet {
-    //   flex-basis: 35%;
-    // }
+    flex-basis: 45%;
   }
   &__logo {
-    // flex-shrink: 1;
-    // flex-basis: 10%;
+    flex-basis: 10%;
+    flex-grow: 1;
+    padding-right: 20px;
+    padding-left: 20px;
   }
 
   &__contacts {
-    // flex-grow: 1;
-    // flex-basis: 45%;
+    flex-basis: 45%;
   }
 
   &__navbar,
@@ -37,6 +34,7 @@
   }
 
   &__contacts {
+    display: flex;
     justify-content: flex-end;
     gap: 30px;
     @include mobile {
@@ -46,6 +44,7 @@
   &__logo-image {
     display: block;
     margin: 0 auto;
+
     @include mobile {
       width: 50px;
     }
@@ -70,8 +69,7 @@
     }
   }
   &__lang {
-    flex-grow: 1;
-    width: 70px;
+    white-space: nowrap;
   }
   &__lang-button {
     display: inline-block;
@@ -108,6 +106,7 @@
 .header__search.active .search__close-icon {
   opacity: 1;
   z-index: 1;
+  width: 16px;
 }
 
 ._feedback-button {
@@ -123,7 +122,6 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 1.5;
-    padding: 0;
     padding: 12px 0;
     border: none;
     outline: none;
@@ -144,10 +142,10 @@
   }
   &__close-icon {
     cursor: pointer;
-    transition: all 0.5s ease;
 
     opacity: 0;
     z-index: -1;
+    width: 0;
 
     // opacity: 1;
     // z-index: 1;
