@@ -1,5 +1,5 @@
 .cookies {
-  display: none;
+  display: block;
   width: 100%;
   position: fixed;
   bottom: 0;
@@ -7,22 +7,36 @@
   z-index: 3;
   background-color: #ffffff;
   color: $grey;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
 
   &__wrapper {
-    padding: 15px 0;
+    padding: 15px $desktop-padding;
     max-width: 1440px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    a {
-      text-decoration: underline;
-      cursor: pointer;
-      color: inherit;
+
+    @include tablet {
+      padding: 10px $tablet-padding 20px;
+      flex-wrap: wrap;
+      text-align: center;
+      justify-content: center;
     }
+    @include mobile {
+      padding: 10px $mobile-padding 20px;
+    }
+  }
+  &__link {
+    text-decoration: underline;
+    cursor: pointer;
+    color: inherit;
   }
   &__btn {
     cursor: pointer;
     color: $accent;
     text-decoration: underline;
+    @include tablet {
+      padding-top: 10px;
+    }
   }
 }
