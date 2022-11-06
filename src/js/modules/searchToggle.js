@@ -1,7 +1,7 @@
-const closeBtn = document.querySelector('.search__close-icon');
-const searchBtn = document.querySelector('.search__search-icon');
 const searchBlock = document.querySelector('.header__search');
-const phoneBtn = document.querySelector('.header__icon--phone');
+const closeBtn = searchBlock.querySelector('.icon--close');
+const searchBtn = searchBlock.querySelector('.icon--search');
+const phoneBtn = document.querySelector('.icon--phone');
 const feedbackBtn = document.querySelector('.header__feedback-button ');
 
 const timeouts = [];
@@ -14,7 +14,7 @@ const actionOnTimeout = (callback, time) => {
 };
 
 const onSearchOpen = () => {
-  searchBlock.classList.add('active');
+  searchBlock.classList.remove('closed');
 };
 
 const onSearchClose = () => {
@@ -24,7 +24,7 @@ const onSearchClose = () => {
 
 searchBtn.addEventListener('click', () => {
   timeouts.forEach((timeout) => clearTimeout(timeout));
-  if (!searchBlock.classList.contains('active')) {
+  if (searchBlock.classList.contains('closed')) {
     feedbackBtn.style.display = 'none';
     phoneBtn.style.display = 'none';
 
@@ -34,8 +34,8 @@ searchBtn.addEventListener('click', () => {
 
 closeBtn.addEventListener('click', () => {
   timeouts.forEach((timeout) => clearTimeout(timeout));
-  if (searchBlock.classList.contains('active')) {
-    searchBlock.classList.remove('active');
+  if (!searchBlock.classList.contains('closed')) {
+    searchBlock.classList.add('closed');
 
     actionOnTimeout(onSearchClose, 400);
   }
