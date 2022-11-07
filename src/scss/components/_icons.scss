@@ -1,0 +1,13 @@
+.icon {
+  cursor: pointer;
+  display: block;
+  &--search,
+  &--phone,
+  &--next,
+  &--prev {
+    fill: $accent;
+  }
+  &--close {
+    fill: $grey;
+  }
+}

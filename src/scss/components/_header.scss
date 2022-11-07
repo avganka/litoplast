@@ -30,6 +30,47 @@
   display: none;
 }
 
+.phones {
+  &__list {
+    display: none;
+    flex-direction: column;
+    gap: 30px;
+    position: absolute;
+    list-style: none;
+    background-color: #ffffff;
+    padding: 30px;
+    min-width: 380px;
+    text-align: right;
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+    z-index: 3;
+    right: 0;
+    @include mobile {
+      min-width: 240px;
+      gap: 20px;
+      padding: 20px;
+    }
+  }
+  &__text {
+    margin-bottom: 10px;
+    color: $dark;
+    font-weight: 400;
+    @include mobile {
+      font-size: 12px;
+    }
+  }
+  &__number {
+    text-decoration: none;
+    color: $accent;
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+}
+
+.header__phones:hover .phones__list {
+  display: flex;
+}
+
 .header {
   &__wrapper {
     display: flex;
@@ -109,14 +150,7 @@
       display: none;
     }
   }
-}
-
-.icon {
-  cursor: pointer;
-  width: 20px;
-  height: 20px;
-  @include mobile {
-    width: 16px;
-    height: 16px;
+  &__phones {
+    position: relative;
   }
 }
