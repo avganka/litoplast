@@ -1,5 +1,5 @@
 .cookies {
-  display: none;
+  max-height: 0;
   width: 100%;
   position: fixed;
   bottom: 0;
@@ -8,6 +8,7 @@
   background-color: #ffffff;
   color: $grey;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+  transition: all 0.5s ease;
 
   &__wrapper {
     padding: 15px $desktop-padding;
@@ -39,4 +40,8 @@
       padding-top: 10px;
     }
   }
+}
+
+.cookies.opened {
+  max-height: 50px;
 }
