@@ -10,7 +10,6 @@
   transition: all 0.5s ease;
   opacity: 0;
   visibility: hidden;
-  // transform: translateY(-200px);
   &__container {
     display: flex;
     align-items: center;
@@ -55,5 +54,4 @@
 .popup.opened {
   opacity: 1;
   visibility: visible;
-  // transform: translateY(0);
 }

@@ -1,6 +1,8 @@
 const popupBtns = document.querySelectorAll('.button-popup');
+const body = document.body;
 
 let isOpened = false;
+const ANIMATION_DURATION = 500;
 
 if (popupBtns.length > 0) {
   popupBtns.forEach((btn) => {
@@ -13,8 +15,7 @@ if (popupBtns.length > 0) {
     });
 
     const closeBtn = popup.querySelector('.popup__close');
-
-    closeBtn.addEventListener('click', (evt) => {
+    closeBtn.addEventListener('click', () => {
       closePopup(popup);
       isOpened = false;
     });
@@ -31,12 +32,25 @@ if (popupBtns.length > 0) {
 const openPopup = (popupElement) => {
   if (popupElement && !isOpened) {
     popupElement.classList.add('opened');
+    lockBodyScroll(popupElement);
   }
 };
 const closePopup = (popupElement) => {
   if (popupElement && isOpened) {
     popupElement.classList.remove('opened');
+    setTimeout(() => {
+      unlockBodyScroll();
+    }, ANIMATION_DURATION);
   }
 };
 
-const blockBodyScroll = () => {};
+const lockBodyScroll = (popup) => {
+  body.classList.add('lock');
+  const scrollShift = window.innerWidth - popup.querySelector('.popup__container').scrollWidth;
+  body.style.paddingRight = `${scrollShift}px`;
+};
+
+const unlockBodyScroll = () => {
+  body.classList.remove('lock');
+  body.style.paddingRight = `0px`;
+};
