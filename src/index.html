@@ -211,41 +211,98 @@
   </header>
 
   <main>
-    <section class="slider">
-      <div class="container slider__wrapper">
-        <div class="slider__info">
-          <h1 class="main-title">Литопласт
-          </h1>
-          <span>Производство полного цикла с 1992 года</span>
-          <p class="slider__subtitle">Ценим традиции, следуем запросам времени</p>
-          <p class="slider__description">Используем только лучшие азработки и технические
-            решения для производства продуктов по направлениям
-            <img src="./img/icons/arrow.svg" alt="">
-          </p>
+    <section class="main ">
+      <div class="container main__inner slider slider--main">
+        <div class="slider__list">
+          <div class="main__content slider__item slider__item--active">
+            <div class="main__info">
+              <h1 class="main__title main-title">Литопласт
+              </h1>
+              <span>Производство полного цикла с 1992 года</span>
+              <p class="main__subtitle">Ценим традиции, следуем запросам времени</p>
+              <p class="main__description">Используем только лучшие азработки и технические
+                решения для производства продуктов по направлениям
+                <img src="./img/icons/arrow.svg" alt="">
+              </p>
+              <a href="#" class="main__button button button--main">Узнать больше</a>
+            </div>
+            <img class="main__image" src="./img/1.jpg" alt="">
+          </div>
+          <div class="main__content slider__item slider__item--next">
+            <div class="main__info">
+              <h1 class="main__title main-title">НАГРЕВАТЕЛЬНЫЕ СИСТЕМЫ
+              </h1>
+              <p class="main__subtitle">Единственный отечественный производитель электрических систем кабельного
+                обогрева полного цикла</p>
+              <p class="main__description">Широкий ассортимент продукции: тёплый пол, системы антиобледенения,
+                промышленный и сельскохозяйственный обогрев
+              </p>
+              <a href="#" class="main__button button button--main">Смотреть в каталоге</a>
+            </div>
+            <img class="main__image" src="./img/2.jpg" alt="">
+          </div>
+          <div class="main__content slider__item">
+            <div class="main__info">
+              <h1 class="main__title  main-title">ИЗДЕЛИЯ МЕДИЦИНСКОГО<br>НАЗНАЧЕНИЯ ИЗ ПЛАСТмасс
+              </h1>
+              <p class="main__subtitle">Сертифицированные пластмассовые изделия</p>
+              <p class="main__description">Для медицинских учреждений и лабораторий
+              </p>
+              <a href="#" class="main__button button button--main">Смотреть в каталоге</a>
+            </div>
+            <img class="main__image" src="./img/3.jpg" alt="">
+          </div>
+          <div class="main__content slider__item">
+            <div class="main__info">
+              <h1 class="main__title  main-title">Электронные компоненты
+              </h1>
+              <p class="main__subtitle">Сертифицированные пластмассовые изделия</p>
 
-          <div>
-            <a href="#" class="slider__button button button--main">Узнать больше</a>
+              <a href="#" class="main__button button button--main">Смотреть в каталоге</a>
+            </div>
+            <img class="main__image" src="./img/4.jpg" alt="">
           </div>
 
+
+          <div class="main__content slider__item">
+            <div class="main__info">
+              <h1 class="main__title main-title">ИЗДЕЛИЯ ИЗ ПЛАСТмасс
+              </h1>
+
+              <p class="main__subtitle">ЦПластмассовые изделия для швейной, парфюмерной, косметической промышленности,
+                производства бытовой техники</p>
+
+
+              </p>
+              <a href="#" class="main__button button button--main">Смотреть в каталоге</a>
+            </div>
+            <img class="main__image" src="./img/5.jpg" alt="">
+          </div>
+          <div class="main__content slider__item">
+            <div class="main__info">
+              <h1 class="main__title  main-title">ПРЕСС-ФОРМЫ ДЛЯ ЛИТЬЯ<br>ИЗДЕЛИЙ ИЗ ПЛАСТМАСС
+              </h1>
+
+              <p class="main__subtitle">3D-моделирование, собственный R&D отдел</p>
+              <p class="main__description">Разработка дизайна пластмассовых изделий, разработка
+                конструкторско-технической документации, изготовление пресс-форм
+
+              </p>
+              <a href="#" class="main__button button button--main">Смотреть в каталоге</a>
+            </div>
+            <img class="main__image" src="./img/6.jpg" alt="">
+          </div>
         </div>
-        <div class="slider__images">
-
-          <img class="slider__current-image" src="./img/litoplast.jpg" alt="">
-
-          <img class="slider__next-image" src="./img/heating-systems.jpg" alt="">
-
-
-        </div>
-
-        <div class="slider__pagination pagination">
-          <div class="pagination__page active">1</div>
-          <div class="pagination__page ">2</div>
-          <div class="pagination__page ">3</div>
-          <div class="pagination__page ">4</div>
-          <div class="pagination__page ">5</div>
-          <div class="pagination__page ">6</div>
+        <div class="main__pagination pagination">
+          <div class="pagination__page pagination__page--active" data-page="1">1</div>
+          <div class="pagination__page" data-page="2">2</div>
+          <div class="pagination__page" data-page="3">3</div>
+          <div class="pagination__page" data-page="4">4</div>
+          <div class="pagination__page" data-page="5">5</div>
+          <div class="pagination__page" data-page="6">6</div>
         </div>
       </div>
+
     </section>
 
     <section class="mission">
@@ -664,7 +721,7 @@
             <button class="form__button button button--main" type="submit">Отправить запрос</button>
           </form>
         </div>
-        <img class="feedback__img" src="./img/litoplast.jpg" alt="Баннер">
+        <img class="feedback__img" src="./img/1.jpg" alt="Баннер">
 
       </div>
     </section>

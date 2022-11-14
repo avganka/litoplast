@@ -5,10 +5,11 @@
   line-height: 1.2;
   color: $accent;
   text-transform: uppercase;
+
   ~ span {
     color: $accent;
   }
-  @include mobile {
+  @include tablet {
     font-size: 36px;
     line-height: 1.4;
     ~ span {
