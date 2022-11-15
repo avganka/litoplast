@@ -30,6 +30,7 @@ const initSlider = (sliderSelector, {autoscroll}) => {
     if (slides.length >= slideNumber) {
       const slideWidth = slides[0].clientWidth;
       const position = slideWidth * (slideNumber - 1);
+      list.style.transitionDuration = '0.8s';
       list.style.transform = `translateX(-${position}px)`;
       changeActivePaginationNumber(slideNumber);
       changeActiveSlides(slideNumber);
@@ -38,22 +39,29 @@ const initSlider = (sliderSelector, {autoscroll}) => {
 
   const changeActiveSlides = (slideNumber) => {
     let currentSlide = slides[activeSlide - 1];
+    let prevSlide = activeSlide - 2 >= 0 ? slides[activeSlide - 2] : null;
     let nextSlide = slides.length !== slides ? slides[activeSlide] : null;
-    console.log(currentSlide, nextSlide);
 
     currentSlide.classList.remove('slider__item--active');
     if (nextSlide) {
       nextSlide.classList.remove('slider__item--next');
     }
+    if (prevSlide) {
+      prevSlide.classList.remove('slider__item--prev');
+    }
 
     activeSlide = slideNumber;
 
     currentSlide = slides[activeSlide - 1];
+    prevSlide = activeSlide - 2 >= 0 ? slides[activeSlide - 2] : null;
     nextSlide = slides.length !== slides ? slides[activeSlide] : null;
 
     currentSlide.classList.add('slider__item--active');
     if (nextSlide) {
       nextSlide.classList.add('slider__item--next');
+    }
+    if (prevSlide) {
+      prevSlide.classList.add('slider__item--prev');
     }
   };
 
@@ -65,6 +73,27 @@ const initSlider = (sliderSelector, {autoscroll}) => {
     const newPaginationNumber = pagination[slideNumber - 1];
     newPaginationNumber.classList.add('pagination__page--active');
   };
+
+  const slidesWidthObserver = new ResizeObserver((entries) => {
+    for (let entry of entries) {
+      entry.target.style.width = `${slides[0].clientWidth}px`;
+    }
+  });
+
+  const sliderTransformObserver = new ResizeObserver((entries) => {
+    for (let entry of entries) {
+      const slideWidth = slides[0].clientWidth;
+      const position = slideWidth * (activeSlide - 1);
+      entry.target.style.transitionDuration = '0s';
+      entry.target.style.transform = `translateX(-${position}px)`;
+    }
+  });
+
+  slides.forEach((slide) => {
+    slidesWidthObserver.observe(slide);
+  });
+
+  sliderTransformObserver.observe(list);
 };
 
 export default initSlider;

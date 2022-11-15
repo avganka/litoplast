@@ -1,42 +1,47 @@
 .main {
   &__inner {
     position: relative;
-    padding: 0;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    @include tablet {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
   }
   &__content {
     display: flex;
-    flex-wrap: wrap;
-    padding-left: $desktop-padding;
+    min-width: 100%;
     gap: 30px;
     height: 500px;
     @include tablet {
+      flex-wrap: wrap;
+      height: auto;
       padding-top: 10px;
       padding-bottom: 40px;
-      padding-left: $tablet-padding;
     }
     @include mobile {
       padding-top: 10px;
-      padding-left: $mobile-padding;
     }
   }
   &__info {
+    position: relative;
     text-align: left;
     max-width: 410px;
     display: flex;
     flex-direction: column;
     padding-top: 45px;
     @include tablet {
-      max-width: 100%;
+      min-width: 100%;
       padding-top: 10px;
-    }
-    @include mobile {
-      max-width: 100%;
     }
   }
   &__title {
     white-space: nowrap;
-    z-index: 1;
+    // position: absolute;
+    // width: 100%;
+    z-index: 2;
     @include tablet {
+      // position: static;
       white-space: normal;
     }
   }
@@ -73,10 +78,12 @@
     margin-top: auto;
     align-self: start;
     @include tablet {
-      margin-top: 0;
+      margin-top: auto;
     }
   }
   &__image {
+    position: relative;
+    z-index: 1;
     align-self: center;
     object-fit: cover;
     width: 410px;
@@ -84,6 +91,7 @@
     transition: all 0.5s ease;
     @include tablet {
       align-self: end;
+      margin-right: 200px;
     }
     @include mobile {
       height: 320px;
@@ -92,8 +100,9 @@
   }
   &__pagination {
     position: absolute;
+    z-index: 1;
     right: $desktop-padding;
-    bottom: 0;
+    bottom: 50px;
     @include tablet {
       right: $tablet-padding;
       bottom: 0;
