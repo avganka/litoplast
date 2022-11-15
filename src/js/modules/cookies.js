@@ -3,7 +3,7 @@ const cookiesBanner = document.querySelector('.cookies');
 
 const domain = window.location.hostname;
 const path = '/';
-const maxAge = 36000;
+const maxAge = 3600;
 
 const getCookie = (name) => {
   let matches = document.cookie.match(
