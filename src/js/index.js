@@ -7,5 +7,5 @@ import initSlider from './modules/slider.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initPopup();
-  initSlider('.slider--main', {autoscroll: false});
+  initSlider('main-slider', {autoscroll: false});
 });

@@ -1,5 +1,5 @@
-const initSlider = (sliderSelector, {autoscroll}) => {
-  const sliderContainer = document.querySelector(sliderSelector);
+const initSlider = (sliderId, {autoscroll}) => {
+  const sliderContainer = document.getElementById(sliderId);
   const pagination = sliderContainer.querySelectorAll('[data-page]');
   const list = sliderContainer.querySelector('.slider__list');
   const slides = sliderContainer.querySelectorAll('.slider__item');
