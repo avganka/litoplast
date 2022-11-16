@@ -313,7 +313,7 @@
 
     <section class="features">
       <div class="container">
-        <h2 class="features__title section-title">Ценности компании</h2>
+        <h2 class="section-title section-title--center">Ценности компании</h2>
         <ul class="features__list">
           <li class="features__item">
             <img class="features__img" src="./img/icons/shield.svg" alt="">
@@ -414,15 +414,18 @@
 
     <section class="popular">
       <div class="container">
-        <h2 class="popular__title section-title">Популярные товары</h2>
+        <h2 class="section-title">Популярные товары</h2>
         <div class="popular__catalog">
           <div class="popular__tabs-list">
-            <div class="popular__tab active">Лидеры продаж</div>
-            <div class="popular__tab">Новинки</div>
+            <div class="popular__tab popular__tab--active" data-tab-name="popular">Лидеры продаж</div>
+            <div class="popular__tab" data-tab-name="new">Новинки</div>
           </div>
+
+          <div class="k"></div>
+
           <div class="popular__card-list">
             <article class="card">
-              <img class="card__img" src="./img/card-photo-1.jpg" alt="Пробирки Фалькон конические">
+              <img class="card__img" src="./img/goods/card-photo-1.jpg" alt="Пробирки Фалькон конические">
               <h3 class="card__title">Пробирки Фалькон конические</h3>
               <div class="card__info">
                 <div>
@@ -440,7 +443,7 @@
               </div>
             </article>
             <article class="card">
-              <img class="card__img" src="./img/card-photo-2.jpg" alt="Пробирки Фалькон конические">
+              <img class="card__img" src="./img/goods/card-photo-2.jpg" alt="Пробирки Фалькон конические">
               <h3 class="card__title">Пробирки конические центрифужные</h3>
               <div class="card__info">
                 <div>
@@ -459,7 +462,7 @@
             </article>
             <article class="card">
 
-              <img class="card__img" src="./img/card-photo-3.jpg" alt="Пробирки Фалькон конические">
+              <img class="card__img" src="./img/goods/card-photo-3.jpg" alt="Пробирки Фалькон конические">
 
               <h3 class="card__title">Пробирки круглодонные</h3>
               <div class="card__info">
@@ -479,7 +482,7 @@
             </article>
             <article class="card">
 
-              <img class="card__img" src="./img/card-photo-4.jpg" alt="Пробирки Фалькон конические">
+              <img class="card__img" src="./img/goods/card-photo-4.jpg" alt="Пробирки Фалькон конические">
 
               <h3 class="card__title">Чашки Петри</h3>
               <div class="card__info">
@@ -497,9 +500,9 @@
                 </div>
               </div>
             </article>
-            <!-- <article class="card">
+            <article class="card">
 
-              <img class="card__img" src="./img/card-photo-5.jpg" alt="Пробирки Фалькон конические">
+              <img class="card__img" src="./img/goods/card-photo-5.jpg" alt="Пробирки Фалькон конические">
 
               <h3 class="card__title">Кюветы для коагулометров Solar</h3>
               <div class="card__info">
@@ -516,14 +519,87 @@
                   <span class="card__feature-value">350х250х216 мм</span>
                 </div>
               </div>
-            </article> -->
+            </article>
+            <article class="card">
+              <img class="card__img" src="./img/goods/card-photo-6.jpg" alt="Теплый пол Wirt">
+              <h3 class="card__title">Теплый пол Wirt</h3>
+              <div class="card__info">
+                <div>
+                  <span class="card__feature-text">Тип:</span>
+                  <span class="card__feature-value">нагревательный кабель</span>
+                </div>
+                <div>
+                  <span class="card__feature-text">Площадь обогрева:</span>
+                  <span class="card__feature-value">15 м²</span>
+                </div>
+                <div>
+                  <span class="card__feature-text">Длина кабеля:</span>
+                  <span class="card__feature-value">95 м</span>
+                </div>
+              </div>
+            </article>
+            <article class="card">
+              <img class="card__img" src="./img/goods/card-photo-7.jpg" alt="Теплый пол Wirt">
+              <h3 class="card__title">Теплый пол Wirt</h3>
+              <div class="card__info">
+                <div>
+                  <span class="card__feature-text">Тип:</span>
+                  <span class="card__feature-value">нагревательный кабель</span>
+                </div>
+                <div>
+                  <span class="card__feature-text">Площадь обогрева:</span>
+                  <span class="card__feature-value">15 м²</span>
+                </div>
+                <div>
+                  <span class="card__feature-text">Длина кабеля:</span>
+                  <span class="card__feature-value">95 м</span>
+                </div>
+              </div>
+            </article>
+            <article class="card">
+              <img class="card__img" src="./img/goods/card-photo-8.jpg" alt="Теплый пол Runa">
+              <h3 class="card__title">Теплый пол Runa</h3>
+              <div class="card__info">
+                <div>
+                  <span class="card__feature-text">Тип:</span>
+                  <span class="card__feature-value">нагревательный кабель</span>
+                </div>
+                <div>
+                  <span class="card__feature-text">Площадь обогрева:</span>
+                  <span class="card__feature-value">15 м²</span>
+                </div>
+                <div>
+                  <span class="card__feature-text">Длина кабеля:</span>
+                  <span class="card__feature-value">95 м</span>
+                </div>
+              </div>
+            </article>
+            <article class="card">
+              <img class="card__img" src="./img/goods/card-photo-9.jpg" alt="Кабель LTK">
+              <h3 class="card__title">Кабель LTK</h3>
+              <div class="card__info">
+                <div>
+                  <span class="card__feature-text">Тип:</span>
+                  <span class="card__feature-value">нагревательный кабель</span>
+                </div>
+                <div>
+                  <span class="card__feature-text">Площадь обогрева:</span>
+                  <span class="card__feature-value">15 м²</span>
+                </div>
+                <div>
+                  <span class="card__feature-text">Длина кабеля:</span>
+                  <span class="card__feature-value">95 м</span>
+                </div>
+              </div>
+            </article>
           </div>
+
         </div>
+
         <div class="pagination pagination--center">
           <svg class="icon icon--prev pagination__page" width="43" height="42">
             <use xlink:href="#prev"></use>
           </svg>
-
           <div class="pagination__page active">1</div>
           <div class="pagination__page ">2</div>
           <div class="pagination__page ">3</div>
@@ -531,8 +607,6 @@
           <svg class="icon icon--prev pagination__page" width="43" height="42">
             <use xlink:href="#next"></use>
           </svg>
-
-
         </div>
       </div>
       </div>
@@ -540,7 +614,7 @@
 
     <section class="advantages">
       <div class="container advantages__wrapper">
-        <h2 class="advantages__title section-title">Почему выбирают нас</h2>
+        <h2 class="section-title section-title--center section-title--light">Почему выбирают нас</h2>
         <div class="advantages__list">
           <article class="advantages__item advantage">
             <h3 class="advantage__title">Мы являемся экспертами в своём сегменте</h3>
@@ -614,7 +688,7 @@
             </ul>
           </article>
         </div>
-        <p class="advantages__slogan big-text">Качество в каждом продукте</p>
+        <p class="big-text big-text--light">Качество в каждом продукте</p>
 
 
 
@@ -623,7 +697,7 @@
 
     <section class="partners">
       <div class="container">
-        <h2 class="partners__title section-title">Наши клиенты</h2>
+        <h2 class="section-title section-title--center">Наши клиенты</h2>
         <ul class="partners__list">
           <li class="partners__item">
             <img src="./img/partners/1.jpg" alt="Ригла" class="partners__img">
@@ -681,7 +755,7 @@
     <section class="feedback">
       <div class="feedback__wrapper container">
         <div>
-          <h2 class="feedback__title section-title">Форма обратной связи</h2>
+          <h2 class="section-title">Форма обратной связи</h2>
           <p class="feedback__action-text big-text">Сделайте запрос через нашу форму<br> и получите <span>скидку
               в 5%</span> на
             любую
@@ -728,7 +802,7 @@
       <div class="container">
         <div class="contacts__wrapper">
           <div class="contacts__info">
-            <h2 class="contacts__title section-title">Как связаться</h2>
+            <h2 class="section-title">Как связаться</h2>
             <div class="contacts__text">
               <p>ПК ООО «Литопласт» УНП 600048089</p>
               <p>Юридический адрес: 223034, РБ. Минская область, Минский р-н, г. Заславль, ул. Путейко, 31-4, тел: +375

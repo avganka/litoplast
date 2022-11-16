@@ -1,11 +1,4 @@
 .popular {
-  &__title {
-    text-align: left;
-    margin-bottom: 50px;
-    @include mobile {
-      margin-bottom: 30px;
-    }
-  }
   &__catalog {
     margin-bottom: 50px;
     @include mobile {
@@ -32,7 +25,7 @@
       margin-right: 30px;
     }
   }
-  &__tab.active {
+  &__tab--active {
     color: $accent;
     box-shadow: 0 1px 0 $accent;
   }

@@ -11,9 +11,6 @@
   }
   &__title {
     padding-right: 50px;
-    @include mobile {
-      margin-bottom: 20px;
-    }
   }
   &__gallery-list {
     margin: 0 calc($desktop-padding * -1);

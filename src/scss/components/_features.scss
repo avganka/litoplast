@@ -1,10 +1,4 @@
 .features {
-  &__title {
-    margin-bottom: 50px;
-    @include tablet {
-      margin-bottom: 30px;
-    }
-  }
   &__list {
     display: flex;
     justify-content: space-around;
