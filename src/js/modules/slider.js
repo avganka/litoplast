@@ -47,41 +47,68 @@ const initSlider = (sliderId, {autoscroll = false, slidesToScroll = 1} = {}) => 
       }
     }, TIMEOUT);
   }
+  //TODO slider touch swipes
+  // const clickSlideChangingHandler = () => {};
 
-  pagination.addEventListener('click', (evt) => {
-    const target = evt.target;
+  // const touchSlideChangingHandler = () => {};
 
-    if (target === prev) {
-      if (activeSlide > 1) {
-        moveToSlide(activeSlide - 1);
-        changeActivePaginationNumber(activeSlide - 1);
-        changeActiveSlides(activeSlide - 1);
-        checkNextPrevButtons();
+  // let x1 = null;
+  // let xDiff = 0;
+
+  // list.addEventListener('touchstart', (evt) => {
+  //   x1 = evt.touches[0].clientX;
+  // });
+
+  // list.addEventListener('touchmove', (evt) => {
+  //   const x2 = evt.touches[0].clientX;
+  //   xDiff = x2 - x1;
+
+  //   if (xDiff < 0) {
+  //     list.style.transform = `translateX(${translate}px)`;
+  //   } else {
+  //     list.style.transform = `translateX(${translate}px)`;
+  //   }
+  // });
+
+  // list.addEventListener('touchend', () => {
+  //   translate = xDiff;
+  // });
+  if (pagination) {
+    pagination.addEventListener('click', (evt) => {
+      const target = evt.target;
+
+      if (target === prev) {
+        if (activeSlide > 1) {
+          moveToSlide(activeSlide - 1);
+          changeActivePaginationNumber(activeSlide - 1);
+          changeActiveSlides(activeSlide - 1);
+          checkNextPrevButtons();
+          return;
+        }
+      }
+
+      if (target === next) {
+        if (activeSlide < slides.length) {
+          moveToSlide(activeSlide + 1);
+          changeActivePaginationNumber(activeSlide + 1);
+          changeActiveSlides(activeSlide + 1);
+          checkNextPrevButtons();
+        }
         return;
       }
-    }
 
-    if (target === next) {
-      if (activeSlide < slides.length) {
-        moveToSlide(activeSlide + 1);
-        changeActivePaginationNumber(activeSlide + 1);
-        changeActiveSlides(activeSlide + 1);
-        checkNextPrevButtons();
+      if (Array.from(pages).indexOf(target) !== -1) {
+        const slide = +evt.target.getAttribute('data-page');
+        moveToSlide(slide);
+        changeActivePaginationNumber(slide);
+        changeActiveSlides(slide);
+        if (prev || next) {
+          checkNextPrevButtons();
+        }
+        return;
       }
-      return;
-    }
-
-    if (Array.from(pages).indexOf(target) !== -1) {
-      const slide = +evt.target.getAttribute('data-page');
-      moveToSlide(slide);
-      changeActivePaginationNumber(slide);
-      changeActiveSlides(slide);
-      if (prev || next) {
-        checkNextPrevButtons();
-      }
-      return;
-    }
-  });
+    });
+  }
 
   const moveToSlide = (slideNumber) => {
     if (slides.length >= slideNumber) {

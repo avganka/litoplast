@@ -30,14 +30,18 @@ const setCookie = (name, value, options = {}) => {
   document.cookie = updatedCookie;
 };
 
-const showCookiesBanner = getCookie('allowCookies');
+const showCookiesNotification = () => {
+  const showCookiesBanner = getCookie('allowCookies');
 
-if (!showCookiesBanner) {
-  setTimeout(() => {
-    cookiesBanner.classList.add('opened');
-  }, 1000);
-  cookiesSuccessBtn.addEventListener('click', () => {
-    setCookie('allowCookies', true, {path, domain, 'max-age': maxAge});
-    cookiesBanner.classList.remove('opened');
-  });
-}
+  if (!showCookiesBanner) {
+    setTimeout(() => {
+      cookiesBanner.classList.add('opened');
+    }, 1000);
+    cookiesSuccessBtn.addEventListener('click', () => {
+      setCookie('allowCookies', true, {path, domain, 'max-age': maxAge});
+      cookiesBanner.classList.remove('opened');
+    });
+  }
+};
+
+export default showCookiesNotification;

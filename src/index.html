@@ -419,11 +419,11 @@
       <div class="container slider">
         <h2 class="section-title">Популярные товары</h2>
         <div class="popular__catalog">
-          <div class="popular__tabs-list">
-            <div class="popular__tab popular__tab--active" data-tab-name="popular">Лидеры продаж</div>
-            <div class="popular__tab" data-tab-name="new">Новинки</div>
+          <div id="popular-tabs" class="popular__tabs-list">
+            <div class="popular__tab popular__tab--active" data-tab-name="card-slider-hits">Лидеры продаж</div>
+            <div class="popular__tab" data-tab-name="card-slider-new">Новинки</div>
           </div>
-          <div id="card-slider" class="slider">
+          <div id="card-slider-hits" class="tab-body-element slider">
             <div class="popular__card-list slider__list">
               <article class="popular__card-item card slider__item">
                 <img class="card__img" src="./img/goods/card-photo-1.jpg" alt="Пробирки Фалькон конические">
@@ -603,14 +603,52 @@
               <div class="pagination__page" data-page="3">3</div>
               <div class="pagination__page" data-page="4">4</div>
               <div class="pagination__page" data-page="5">5</div>
-              <!-- <div class="pagination__page" data-page="6">6</div>
-              <div class="pagination__page" data-page="7">7</div>
-              <div class="pagination__page" data-page="8">8</div>
-              <div class="pagination__page" data-page="9">9</div> -->
               <svg class="icon icon--prev pagination__page pagination__next-button" width="43" height="42">
                 <use xlink:href="#next"></use>
               </svg>
             </div>
+          </div>
+
+          <div style="display:none;" id="card-slider-new" class="tab-body-element slider">
+            <div class="popular__card-list slider__list">
+              <article class="popular__card-item card slider__item">
+                <img class="card__img" src="./img/goods/card-photo-8.jpg" alt="Теплый пол Runa">
+                <h3 class="card__title">Теплый пол Runa</h3>
+                <div class="card__info">
+                  <div>
+                    <span class="card__feature-text">Тип:</span>
+                    <span class="card__feature-value">нагревательный кабель</span>
+                  </div>
+                  <div>
+                    <span class="card__feature-text">Площадь обогрева:</span>
+                    <span class="card__feature-value">15 м²</span>
+                  </div>
+                  <div>
+                    <span class="card__feature-text">Длина кабеля:</span>
+                    <span class="card__feature-value">95 м</span>
+                  </div>
+                </div>
+              </article>
+              <article class="popular__card-item card slider__item">
+                <img class="card__img" src="./img/goods/card-photo-9.jpg" alt="Кабель LTK">
+                <h3 class="card__title">Кабель LTK</h3>
+                <div class="card__info">
+                  <div>
+                    <span class="card__feature-text">Тип:</span>
+                    <span class="card__feature-value">нагревательный кабель</span>
+                  </div>
+                  <div>
+                    <span class="card__feature-text">Площадь обогрева:</span>
+                    <span class="card__feature-value">15 м²</span>
+                  </div>
+                  <div>
+                    <span class="card__feature-text">Длина кабеля:</span>
+                    <span class="card__feature-value">95 м</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+
           </div>
 
         </div>
