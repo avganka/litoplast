@@ -23,6 +23,9 @@
     p {
       padding-bottom: 7px;
     }
+    address {
+      font-style: normal;
+    }
   }
   &__map {
     @include tablet {

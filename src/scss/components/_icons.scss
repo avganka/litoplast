@@ -1,6 +1,7 @@
 .icon {
   cursor: pointer;
   display: block;
+  transition: all 0.3s ease;
   &--search,
   &--phone,
   &--next,
@@ -9,5 +10,8 @@
   }
   &--close {
     fill: $grey;
+  }
+  &:hover {
+    transform: scale(1.2);
   }
 }

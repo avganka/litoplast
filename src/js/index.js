@@ -23,5 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
     autoscroll: false,
     slidesToScroll: 1,
   });
+  initSlider('partners-slider', {
+    autoscroll: false,
+    slidesToScroll: 1,
+  });
   initTabs('popular-tabs');
 });

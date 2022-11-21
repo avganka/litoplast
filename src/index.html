@@ -14,7 +14,7 @@
 
       <nav class="header__navbar">
         <div class="navbar__main-menu-wrapper">
-          <div class="navbar__main-menu-button button burger">
+          <button class="navbar__main-menu-button button burger">
             <div class="burger__wrapper">
               <div class="burger__line burger__line--1"></div>
               <div class="burger__line burger__line--2"></div>
@@ -22,7 +22,7 @@
               <div class="burger__line burger__line--4"></div>
             </div>
             <div class="burger__text">Меню</div>
-          </div>
+          </button>
           <div class="navbar__main-menu">
             <div class="navbar__search search">
               <input class="search__input" type="text" placeholder="Искать на сайте">
@@ -75,12 +75,14 @@
                       </li>
                     </ul>
                   </li>
-                  <li class="menu__item menu__item--dropdown">Нагревательные системы
+                  <li class="menu__item menu__item--dropdown">
+                    <span>Нагревательные системы</span>
                     <svg width="8" height="14">
                       <use xlink:href="#arrow-down"></use>
                     </svg>
                   </li>
-                  <li class="menu__item menu__item--dropdown">Электронные компоненты
+                  <li class="menu__item menu__item--dropdown">
+                    <span>Электронные компоненты</span>
                     <svg width="8" height="14">
                       <use xlink:href="#arrow-down"></use>
                     </svg>
@@ -186,7 +188,7 @@
           </ul>
         </div>
         <div class="header__feedback">
-          <button href="#" class="header__feedback-button button button--main button-popup"
+          <button class="header__feedback-button button button--main button-popup"
             data-popup-id="feedback-form-popup">Оставить заявку</button>
         </div>
         <div class="header__search search closed ">
@@ -420,7 +422,7 @@
         <h2 class="section-title">Популярные товары</h2>
         <div class="popular__catalog">
           <div id="popular-tabs" class="popular__tabs-list">
-            <div class="popular__tab popular__tab--active" data-tab-name="card-slider-hits">Лидеры продаж</div>
+            <div class="popular__tab popular__tab--active" data-tab-name="card-slider-hits"> Лидеры продаж</div>
             <div class="popular__tab" data-tab-name="card-slider-new">Новинки</div>
           </div>
           <div id="card-slider-hits" class="tab-body-element slider">
@@ -742,55 +744,58 @@
     <section class="partners">
       <div class="container">
         <h2 class="section-title section-title--center">Наши клиенты</h2>
-        <ul class="partners__list">
-          <li class="partners__item">
-            <img src="./img/partners/1.jpg" alt="Ригла" class="partners__img">
-          </li>
-          <li class="partners__item">
-            <img src="./img/partners/2.jpg" alt="Протек" class="partners__img">
-          </li>
-          <li class="partners__item">
-            <img src="./img/partners/3.jpg" alt="Атлант" class="partners__img">
-          </li>
-          <li class="partners__item">
-            <img src="./img/partners/4.jpg" alt="Alutech" class="partners__img">
-          </li>
-          <li class="partners__item">
-            <img src="./img/partners/5.jpg" alt="Leangroup" class="partners__img">
-          </li>
-          <li class="partners__item">
-            <img src="./img/partners/6.jpg" alt="AradGroup" class="partners__img">
-          </li>
-          <li class="partners__item">
-            <img src="./img/partners/7.jpg" alt="Красная нить" class="partners__img">
-          </li>
-          <li class="partners__item">
-            <img src="./img/partners/8.jpg" alt="Gefest" class="partners__img">
-          </li>
-          <li class="partners__item">
-            <img src="./img/partners/9.jpg" alt="Milavatsa" class="partners__img">
-          </li>
-          <li class="partners__item">
-            <img src="./img/partners/10.jpg" alt="MF" class="partners__img">
-          </li>
-          <li class="partners__item">
-            <img src="./img/partners/11.jpg" alt="Gefest" class="partners__img">
-          </li>
-          <li class="partners__item">
-            <img src="./img/partners/12.jpg" alt="Milavatsa" class="partners__img">
-          </li>
-        </ul>
-        <div class="pagination pagination--center">
-          <svg class="icon icon--prev pagination__page" width="43" height="42">
-            <use xlink:href="#prev"></use>
-          </svg>
-          <div class="pagination__page active">1</div>
-          <div class="pagination__page ">2</div>
-          <div class="pagination__page ">3</div>
-          <div class="pagination__page ">4</div>
-          <svg class="icon icon--next pagination__page" width="43" height="42">
-            <use xlink:href="#next"></use>
-          </svg>
+        <div id="partners-slider" class="slider">
+          <ul class="partners__list slider__list">
+            <li class="partners__item slider__item">
+              <img src="./img/partners/1.jpg" alt="Ригла" class="partners__img">
+            </li>
+            <li class="partners__item slider__item">
+              <img src="./img/partners/2.jpg" alt="Протек" class="partners__img">
+            </li>
+            <li class="partners__item slider__item">
+              <img src="./img/partners/3.jpg" alt="Атлант" class="partners__img">
+            </li>
+            <li class="partners__item slider__item">
+              <img src="./img/partners/4.jpg" alt="Alutech" class="partners__img">
+            </li>
+            <li class="partners__item slider__item">
+              <img src="./img/partners/5.jpg" alt="Leangroup" class="partners__img">
+            </li>
+            <li class="partners__item slider__item">
+              <img src="./img/partners/6.jpg" alt="AradGroup" class="partners__img">
+            </li>
+            <li class="partners__item slider__item">
+              <img src="./img/partners/7.jpg" alt="Красная нить" class="partners__img">
+            </li>
+            <li class="partners__item slider__item">
+              <img src="./img/partners/8.jpg" alt="Gefest" class="partners__img">
+            </li>
+            <li class="partners__item slider__item">
+              <img src="./img/partners/9.jpg" alt="Milavatsa" class="partners__img">
+            </li>
+            <li class="partners__item slider__item">
+              <img src="./img/partners/10.jpg" alt="MF" class="partners__img">
+            </li>
+            <li class="partners__item slider__item">
+              <img src="./img/partners/11.jpg" alt="Gefest" class="partners__img">
+            </li>
+            <li class="partners__item slider__item">
+              <img src="./img/partners/12.jpg" alt="Milavatsa" class="partners__img">
+            </li>
+          </ul>
+          <div class="pagination pagination--center slider__pagination">
+            <svg class="icon icon--prev pagination__page pagination__prev-button" width="43" height="42">
+              <use xlink:href="#prev"></use>
+            </svg>
+            <div class="pagination__page pagination__page--active" data-page="1">1</div>
+            <div class="pagination__page" data-page="2">2</div>
+            <div class="pagination__page" data-page="3">3</div>
+            <div class="pagination__page" data-page="4">4</div>
+            <div class="pagination__page" data-page="5">5</div>
+            <svg class="icon icon--prev pagination__page pagination__next-button" width="43" height="42">
+              <use xlink:href="#next"></use>
+            </svg>
+          </div>
         </div>
       </div>
     </section>
@@ -804,7 +809,7 @@
               в 5%</span> на
             любую
             продукцию в первом заказе</p>
-          <form class="form">
+          <form class="form" method="post">
             <div class="form__top-contacts">
               <input type="text" name="name" placeholder="Ваше имя">
               <input type="email" name="email" placeholder="Ваш e-mail">
@@ -851,7 +856,7 @@
               <p>ПК ООО «Литопласт» УНП 600048089</p>
               <p>Юридический адрес: 223034, РБ. Минская область, Минский р-н, г. Заславль, ул. Путейко, 31-4, тел: +375
                 17 517-83-48.</p>
-              <p>Офис: 220037, РБ, г. Минск, пер. Козлова, 7г</p>
+              <address>Офис: 220037, РБ, г. Минск, пер. Козлова, 7г</address>
             </div>
             <div class="contacts__map">
               <iframe
@@ -1014,7 +1019,8 @@
         </div>
         <div class="footer__menu menu">
           <h3 class="menu__title">Обратная связь</h3>
-          <button class="menu__button button button--main">Отправить запрос</button>
+          <button class="menu__button button button--main button-popup" data-popup-id="feedback-form-popup">Отправить
+            запрос</button>
         </div>
       </div>
       <div class="footer__copyright">© 1992-2022, «ЛИТОПЛАСТ»</div>

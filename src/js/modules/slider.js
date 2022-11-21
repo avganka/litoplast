@@ -8,7 +8,7 @@ const initSlider = (sliderId, {autoscroll = false, slidesToScroll = 1} = {}) => 
   const next = sliderContainer.querySelector('.pagination__next-button') || null;
 
   let activeSlide = 1;
-  let translate = 0;
+  // let translate = 0;
   const TIMEOUT = 5000;
   const minGapBetweenElements = 10;
 

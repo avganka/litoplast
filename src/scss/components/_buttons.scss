@@ -18,13 +18,22 @@
     font-size: 12px;
     line-height: 14.4px;
   }
+  &:hover {
+    background-color: darken($accent, 10%);
+  }
   &--transparent {
     color: $dark;
     background-color: #ffffff;
+    &:hover {
+      background-color: darken(#ffffff, 10%);
+    }
   }
   &--bordered {
     color: $accent;
     background-color: #ffffff;
+    &:hover {
+      background-color: darken(#ffffff, 10%);
+    }
   }
   &--catalog {
     font-weight: 300;

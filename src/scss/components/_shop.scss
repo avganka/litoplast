@@ -30,6 +30,9 @@
     padding-bottom: 5px;
     color: $accent;
     text-decoration: none;
+    &:hover {
+      color: darken($accent, 20%);
+    }
   }
 
   &__social-list {

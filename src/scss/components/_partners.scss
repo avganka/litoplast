@@ -1,20 +1,20 @@
 .partners {
   &__list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 30px;
     list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 210px);
+    column-gap: 60px;
+    row-gap: 30px;
+    grid-auto-flow: column;
+    grid-auto-columns: 210px;
+    justify-content: space-between;
     margin-bottom: 50px;
     @include mobile {
-      gap: 10px;
+      grid-template-columns: repeat(auto-fill, 165px);
+      grid-template-rows: repeat(3, auto);
+      grid-auto-columns: 165px;
+      column-gap: 10px;
       margin-bottom: 30px;
-    }
-  }
-  &__item {
-    flex-basis: 190px;
-    @include mobile {
-      flex-basis: 165px;
     }
   }
   &__img {
