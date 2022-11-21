@@ -1,12 +1,43 @@
-const initSlider = (sliderId, {autoscroll}) => {
+const initSlider = (sliderId, {autoscroll = false, slidesToScroll = 1} = {}) => {
   const sliderContainer = document.getElementById(sliderId);
-  const pagination = sliderContainer.querySelectorAll('[data-page]');
+  const pagination = sliderContainer.querySelector('.slider__pagination');
+  const pages = sliderContainer.querySelectorAll('[data-page]');
   const list = sliderContainer.querySelector('.slider__list');
   const slides = sliderContainer.querySelectorAll('.slider__item');
+  const prev = sliderContainer.querySelector('.pagination__prev-button') || null;
+  const next = sliderContainer.querySelector('.pagination__next-button') || null;
 
   let activeSlide = 1;
-  // const slidesToScroll = 1;
-  const timeout = 5000;
+  let translate = 0;
+  const TIMEOUT = 5000;
+  const minGapBetweenElements = 10;
+
+  const getELementWidth = (element) => {
+    return element.clientWidth;
+  };
+
+  const getVisibleSlidesCount = () => {
+    const listWidth = getELementWidth(list);
+    const slideWidth = getELementWidth(slides[0]);
+    return (listWidth + minGapBetweenElements) / (slideWidth + minGapBetweenElements);
+  };
+
+  const getSpacingBetweenElements = () => {
+    const slidesToShow = parseInt(getVisibleSlidesCount());
+    const listWidth = getELementWidth(list);
+    const slideWidth = getELementWidth(slides[0]);
+    if (slidesToShow === 1) {
+      return 0;
+    }
+    const gap = (listWidth - slidesToShow * slideWidth) / (slidesToShow - 1);
+    return gap;
+  };
+
+  const getSliderShift = (slideNumber) => {
+    const slideWidth = slides[0].clientWidth;
+    const gap = getSpacingBetweenElements();
+    return (slideWidth + gap) * (slideNumber - 1);
+  };
 
   if (autoscroll) {
     setInterval(() => {
@@ -14,26 +45,49 @@ const initSlider = (sliderId, {autoscroll}) => {
       if (activeSlide >= slides.length) {
         activeSlide = 1;
       }
-    }, timeout);
+    }, TIMEOUT);
   }
 
-  if (pagination.length > 0) {
-    pagination.forEach((slideButton) => {
-      slideButton.addEventListener('click', (evt) => {
-        const slide = +evt.target.getAttribute('data-page');
-        moveToSlide(slide);
-      });
-    });
-  }
+  pagination.addEventListener('click', (evt) => {
+    const target = evt.target;
+
+    if (target === prev) {
+      if (activeSlide > 1) {
+        moveToSlide(activeSlide - 1);
+        changeActivePaginationNumber(activeSlide - 1);
+        changeActiveSlides(activeSlide - 1);
+        checkNextPrevButtons();
+        return;
+      }
+    }
+
+    if (target === next) {
+      if (activeSlide < slides.length) {
+        moveToSlide(activeSlide + 1);
+        changeActivePaginationNumber(activeSlide + 1);
+        changeActiveSlides(activeSlide + 1);
+        checkNextPrevButtons();
+      }
+      return;
+    }
+
+    if (Array.from(pages).indexOf(target) !== -1) {
+      const slide = +evt.target.getAttribute('data-page');
+      moveToSlide(slide);
+      changeActivePaginationNumber(slide);
+      changeActiveSlides(slide);
+      if (prev || next) {
+        checkNextPrevButtons();
+      }
+      return;
+    }
+  });
 
   const moveToSlide = (slideNumber) => {
     if (slides.length >= slideNumber) {
-      const slideWidth = slides[0].clientWidth;
-      const position = slideWidth * (slideNumber - 1);
+      const position = getSliderShift(slideNumber);
       list.style.transitionDuration = '0.8s';
       list.style.transform = `translateX(-${position}px)`;
-      changeActivePaginationNumber(slideNumber);
-      changeActiveSlides(slideNumber);
     }
   };
 
@@ -66,34 +120,39 @@ const initSlider = (sliderId, {autoscroll}) => {
   };
 
   const changeActivePaginationNumber = (slideNumber) => {
-    const currentPaginationNumber = pagination[activeSlide - 1];
+    const currentPaginationNumber = pages[activeSlide - 1];
 
     currentPaginationNumber.classList.remove('pagination__page--active');
 
-    const newPaginationNumber = pagination[slideNumber - 1];
+    const newPaginationNumber = pages[slideNumber - 1];
     newPaginationNumber.classList.add('pagination__page--active');
   };
 
-  const slidesWidthObserver = new ResizeObserver((entries) => {
-    for (let entry of entries) {
-      entry.target.style.width = `${slides[0].clientWidth}px`;
+  const checkNextPrevButtons = () => {
+    if (activeSlide === 1) {
+      pages[0].previousElementSibling.style.visibility = 'hidden';
+      pages[pages.length - 1].nextElementSibling.style.visibility = 'visible';
+    } else if (activeSlide === pages.length) {
+      pages[pages.length - 1].nextElementSibling.style.visibility = 'hidden';
+      pages[0].previousElementSibling.style.visibility = 'visible';
+    } else {
+      pages[pages.length - 1].nextElementSibling.style.visibility = 'visible';
+      pages[0].previousElementSibling.style.visibility = 'visible';
     }
-  });
+  };
 
-  const sliderTransformObserver = new ResizeObserver((entries) => {
+  const sliderListObserver = new ResizeObserver((entries) => {
     for (let entry of entries) {
-      const slideWidth = slides[0].clientWidth;
-      const position = slideWidth * (activeSlide - 1);
+      const gap = getSpacingBetweenElements();
+      entry.target.style.columnGap = `${gap}px`;
+
+      const position = getSliderShift(activeSlide);
       entry.target.style.transitionDuration = '0s';
       entry.target.style.transform = `translateX(-${position}px)`;
     }
   });
 
-  slides.forEach((slide) => {
-    slidesWidthObserver.observe(slide);
-  });
-
-  sliderTransformObserver.observe(list);
+  sliderListObserver.observe(list);
 };
 
 export default initSlider;

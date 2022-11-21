@@ -5,23 +5,3 @@
     transition: transform 0.8s ease;
   }
 }
-
-.slider__item--next > img {
-  z-index: 0;
-  position: relative;
-  height: 400px;
-  margin-left: -700px;
-  @include tablet {
-    margin-left: -200px;
-  }
-  @include mobile {
-    margin-left: -70px;
-    width: 195px;
-    height: 250px;
-  }
-}
-
-.slider__item--next > .main__info,
-.slider__item--prev > .main__info {
-  opacity: 0;
-}

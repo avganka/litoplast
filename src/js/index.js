@@ -7,5 +7,12 @@ import initSlider from './modules/slider.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initPopup();
-  initSlider('main-slider', {autoscroll: false});
+  initSlider('main-slider', {
+    autoscroll: false,
+    slidesToScroll: 1,
+  });
+  initSlider('card-slider', {
+    autoscroll: false,
+    slidesToScroll: 1,
+  });
 });

@@ -1,8 +1,10 @@
 .main {
-  &__inner {
+  &__wrapper {
     position: relative;
     padding-top: 50px;
     padding-bottom: 50px;
+    padding-right: 0;
+
     @include tablet {
       padding-top: 0;
       padding-bottom: 0;
@@ -37,11 +39,8 @@
   }
   &__title {
     white-space: nowrap;
-    // position: absolute;
-    // width: 100%;
     z-index: 2;
     @include tablet {
-      // position: static;
       white-space: normal;
     }
   }
@@ -112,4 +111,25 @@
       bottom: 0;
     }
   }
+}
+
+// Анимация сладера
+.slider__item--next > .main__image {
+  z-index: 0;
+  position: relative;
+  height: 400px;
+  margin-left: -700px;
+  @include tablet {
+    margin-left: -200px;
+  }
+  @include mobile {
+    margin-left: -70px;
+    width: 195px;
+    height: 250px;
+  }
+}
+
+.slider__item--next > .main__info,
+.slider__item--prev > .main__info {
+  opacity: 0;
 }
